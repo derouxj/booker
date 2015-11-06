@@ -1,0 +1,61 @@
+form {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+form div{
+  background-image:linear-gradient(white, LightBlue);
+}
+
+fieldset input, fieldset select, fieldset textarea {
+  margin-right: 20%;
+  float : right;
+  width: 35%;
+}
+
+fieldset select {
+  background: white;
+  margin-top: 1%;
+}
+
+fieldset textarea{
+  resize: none;
+}
+
+fieldset {
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+input#valider {
+  background-image:linear-gradient(white, LightBlue);
+  margin-top: 1%;
+  width: 50%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+input#valider:hover {
+  background-image:linear-gradient(LightBlue, blue);
+  color:white;
+}
+
+div:not(.menu):not(.smenu) {
+  margin-left: 5%;
+  display: inline-block;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 30%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+form input{
+  margin-top: 1%;
+}
