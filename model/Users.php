@@ -11,7 +11,7 @@
  *
  * @author dyonj
  */
-class User {
+class Users {
     private $username;
     private $password;
     private $firstname;
@@ -23,15 +23,15 @@ class User {
     private $profilpic;
     
     function __construct($u, $pa, $f, $l, $e, $pl, $t, $i, $pr){
-    $this->username = $u;
-    $this->password = $pa;
-    $this->firstname = $f;
-    $this->lastname = $l;
-    $this->email = $e;
-    $this->place = $pl;
-    $this->usertype = $t;
-    $this->infos = $i;
-    $this->profilpic = $pr;
+    if($u != null) {$this->username = $u;}
+    if($u != null) {$this->password = $pa;}
+    if($u != null) {$this->firstname = $f;}
+    if($u != null) {$this->lastname = $l;}
+    if($u != null) {$this->email = $e;}
+    if($u != null) {$this->place = $pl;}
+    if($u != null) {$this->usertype = $t;}
+    if($u != null) {$this->infos = $i;}
+    if($u != null) {$this->profilpic = $pr;}
     }
     
 #######################  getters  #######################

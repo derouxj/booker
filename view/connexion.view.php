@@ -16,7 +16,7 @@
                     Connexion
                 </legend>
                 <p>
-                <div>Identifiant :</div><input type="text" name="id" autofocus>
+                <div>Identifiant :</div><input type="text" name="username" autofocus>
                 </p>
                 <p>
                 <div>Mot de passe :</div><input type="password" name="pass">

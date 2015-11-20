@@ -1,6 +1,6 @@
 <?php
 
-include_once("../model/User.php");
+include_once("../model/Users.php");
 include_once("../model/DAO.class.php");
 
 $dao = new DAO();
@@ -41,9 +41,9 @@ if (isset($_POST['valider'])) {
         
         if($correct) {
 //on cree notre obj user et on l'add a la bdd
-            $user = new User($id,$password, $prenom, $nom, $email, $lieu, $type, $desc, NULL);
-            var_dump($user);
+            $user = new Users($id, $dao->hashPassWord($password), $prenom, $nom, $email, $lieu, $type, $desc, 'Default');
             $dao->insertUser($user);
+            unset($user);
         }
     }
 }
