@@ -1,0 +1,51 @@
+<?php
+
+class Utilisateur {
+    private id;
+    private avatar;
+    private nom;
+    private prenom;
+    private email;
+    private lieu;
+    private categorie;
+    private mdp;
+    private description;
+    
+    function id() {
+        return $this->id;
+    }
+
+    function avatar() {
+        return $this->avatar;
+    }
+
+    function nom() {
+        return $this->nom;
+    }
+
+    function prenom() {
+        return $this->prenom;
+    }
+
+    function email() {
+        return $this->email;
+    }
+
+    function lieu() {
+        return $this->lieu;
+    }
+
+    function categorie() {
+        return $this->categorie;
+    }
+
+    function mdp() {
+        return $this->mdp;
+    }
+
+    function description() {
+        return $this->description;
+    }
+  
+}
+?>
