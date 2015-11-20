@@ -16,7 +16,7 @@ class DAO {
         }
     }
 
-    function insertUser(User $user) {
+    function insertUser(Users $user) {
         try {
             $name = $this->db->quote($user->getUsername());
             $pw =$this->db->quote($user->getPassword());
@@ -38,15 +38,15 @@ class DAO {
     }
 
     function getAllFromUserName($username) {
-        $req = $this->db->quote("SELECT * FROM user WHERE username='$username'");
+        $username = $this->db->quote($username);
+        $req = "SELECT * FROM users WHERE username=$username";
         try {
             $res1 = $this->db->query($req);
             if(!$res1){
                 return false;
             }
             else{
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'user');
-            
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
             return $result;
             }
         } catch (PDOException $e) {
@@ -55,10 +55,10 @@ class DAO {
     }
 
     function getUsersFromUserType($type) {
-        $req = $this->db->quote("SELECT * FROM user WHERE type='$type'");
+        $req = $this->db->quote("SELECT * FROM users WHERE type='$type'");
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'user');
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
             return $result;
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
@@ -66,11 +66,30 @@ class DAO {
     }
 
     function getUserFromUserNameAndPassWord($username,$password) {
-        $req = $this->db->quote("SELECT * FROM user WHERE username='$username'AND password='$password'");
+        $req = $this->db->quote("SELECT * FROM users WHERE username='$username'AND password='$password'");
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'user');
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
             return $result;
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
+    
+    function rightPassword($un, $pw){
+        $pw = $this->db->quote($this->hashPassWord($pw));
+        $un = $this->db->quote($un);
+        $req = "SELECT * FROM users WHERE username=$un and password=$pw";
+        try {
+            $res1 = $this->db->query($req);
+            if(!$res1){
+                return false;
+            }
+            else{
+                //$result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+                //var_dump($result);
+                return true;
+            }
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
         }
