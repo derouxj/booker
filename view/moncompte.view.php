@@ -13,7 +13,7 @@
         include("menu.view.php");
         //tous les attributs de mon compte depuis $data['user']?>
         <p>Identifiant : <?php echo $data['user']->getUsername(); ?></p>
-        <p>Nom : <?php echo $data['user']->lastname(); ?></p>
+        <p>Nom : <?php echo $data['user']->getLastname(); ?></p>
         <p>Prenom : <?php echo $data['user']->getFirstName(); ?></p>
         <p>Email : <?php echo $data['user']->getEmail(); ?></p>
         <p>Lieu : <?php echo $data['user']->getPlace(); ?></p>

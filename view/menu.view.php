@@ -89,7 +89,7 @@
                 <a href="../controller/artistes.php">
                     Artistes
                 </a>
-            </li><?php if (!isset($_SESSION['login'])) { ?><li>
+            </li><?php if (!isset($_COOKIE['username'])) { ?><li>
                 <a href="../controller/inscription.php">
                     Inscription
                 </a>

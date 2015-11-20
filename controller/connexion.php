@@ -19,10 +19,11 @@ if(isset($_POST['valider'])) {
         $correct=0;
     }
     if($correct) {
-        session_start();
+        //session_start();
         if($dao->rightPassword($username, $pass)){
-            $_SESSION['login']=$username;
-            var_dump( $_SESSION['login']);
+            //$_SESSION['login']=$username;
+            setcookie("username",$username,time(3600));
+            //var_dump( $_SESSION['login']);
             
         }else {
             //notifier user/mdp incorrect
