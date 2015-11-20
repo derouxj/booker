@@ -41,8 +41,7 @@ if (isset($_POST['valider'])) {
         
         if($correct) {
 //on cree notre obj user et on l'add a la bdd
-            $user = new User($id,$password, $prenom, $nom, $email, $lieu, $type, $desc, NULL);
-            var_dump($user);
+            $user = new User($id,$password, $prenom, $nom, $email, $lieu, $type, $desc, '');
             $dao->insertUser($user);
         }
     }
