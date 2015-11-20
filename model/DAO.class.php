@@ -29,7 +29,7 @@ class DAO {
         }
     }
 
-    function getAllFromId($username) {
+    function getAllFromUserName($username) {
         $req = mysql_real_escape_string("SELECT * FROM user WHERE username='$username'");
         if ($req == NULL) {
             throw new Exception('Identifiant introuvable');
@@ -43,7 +43,7 @@ class DAO {
         }
     }
 
-    function getUsersFromCategorie($type) {
+    function getUsersFromUserType($type) {
         $req = mysql_real_escape_string("SELECT * FROM user WHERE type='$type'");
         if ($req == NULL) {
             throw new Exception('Type introuvable');
@@ -57,7 +57,7 @@ class DAO {
         }
     }
 
-    function getUserFromIdAndMdp($username,$password) {
+    function getUserFromUserNameAndPassWord($username,$password) {
           $req = mysql_real_escape_string("SELECT * FROM user WHERE username='$username'AND password='$password'");
         if ($req == NULL) {
             throw new Exception('Identifiant ou mot de passe erroné');
