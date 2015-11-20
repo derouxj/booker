@@ -22,7 +22,7 @@
                 <div>Numéro de téléphone :</div><input type="text" name="nom">
                 </p>
                 <p>
-                <div>Email :</div><input type="text" name="email" placeholder="exemple@machin.fr">
+                <div>Email :</div><input type="email" name="email" placeholder="exemple@machin.fr">
                 </p>
             </fieldset>
             <fieldset>

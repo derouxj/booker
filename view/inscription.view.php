@@ -29,12 +29,12 @@
                 <legend>
                     Autres infos
                 </legend>
-                <p><div>Email :</div><input type="text" name="email" placeholder="exemple@machin.fr">
+                <p><div>Email :</div><input type="email" name="email" placeholder="exemple@machin.fr">
                 </p>
                 <p><div>Lieu :</div><input type="text" name="lieu">
                 </p>
-                <p><div>Type :</div>
-                <SELECT name="type" size="1">
+                <p><div>Catégorie :</div>
+                <SELECT name="cat" size="1">
                     <OPTION>Artiste
                     <OPTION>Autre
                     <OPTION>Booker
