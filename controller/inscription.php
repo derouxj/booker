@@ -1,12 +1,15 @@
 <?php
 
-include("../view/inscription.view.php");
+include_once("../model/User.php");
+include_once("../model/DAO.class.php");
+
+$dao = new DAO();
 
 if (isset($_POST['valider'])) {
 //ajout d'un objet utilisateur à la BDD
     $correct = 1;
     if (isset($_POST['valider'])) {
-        if (isset($_POST['id']) && $_POST['id'] != '') { //verif non existe BDD
+        if (isset($_POST['id']) && !$dao->getAllFromUserName($_POST['id']) ) {
             $id = $_POST['id'];
         } else {
 //notifier qu'il faut remplir le champ/qu'il n'existe pas deja
@@ -38,7 +41,11 @@ if (isset($_POST['valider'])) {
         
         if($correct) {
 //on cree notre obj user et on l'add a la bdd
+            $user = new User($id,$password, $prenom, $nom, $email, $lieu, $type, $desc, NULL);
+            var_dump($user);
+            $dao->insertUser($user);
         }
     }
 }
+include("../view/inscription.view.php");
 ?>

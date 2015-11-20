@@ -34,10 +34,10 @@
                 <p><div>Lieu :</div><input type="text" name="lieu">
                 </p>
                 <p><div>Catégorie :</div>
-                <SELECT name="cat" size="1">
-                    <OPTION>Artiste
-                    <OPTION>Autre
-                    <OPTION>Booker
+                <SELECT name="type" size="1">
+                    <OPTION value="a">Artiste
+                    <OPTION value="b">Booker
+                    <OPTION value="o">Autre
                 </SELECT>
                 </p>
                 <p><div>Mot de passe :</div><input type="password" name="password">
