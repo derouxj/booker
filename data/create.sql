@@ -1,11 +1,11 @@
 CREATE TABLE utilisateur (
-    id STRING primary key,
-    avatar STRING,
-    nom STRING,
-    prenom STRING,
+    username STRING primary key,
+    password STRING,
+    firstname STRING,
+    lastname STRING,
     email STRING,
-    lieu STRING,
-    categorie STRING,
-    mdp STRING,
-    description STRING
+    place STRING,
+    usertype STRING,
+    infos STRING
+    profilpic STRING,
 );

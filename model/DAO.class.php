@@ -1,6 +1,6 @@
 <?php
 
-require_once("Utilisateur.class.php");
+require_once("User.php");
 
 $dao = new DAO();
 
@@ -17,10 +17,9 @@ class DAO {
         }
     }
 
-    function insertUser(Utilisateur $user) {
+    function insertUser(User $user) {
         try {
-            $q = "INSERT INTO utilisateur (id,avatar,nom,prenom,email,lieu,categorie,mdp,description)
-                VALUES ('$users->id','$users->avatar','$users->nom','$users->prenom','$users->email','$users->lieu','$users->categorie','$users->mdp','$users->description')";
+            $q = mysql_real_escape_string("INSERT INTO user VALUES ('$user->getUsername()','$user->getPassword()','$user->getFirstNAme()','$user->getLastName()','$user->getEmail()','$user->getPlace()','$user->getType()','$user->getInfos','$user->getProfilPic()')");
             $r = $this->db->exec($q);
             if ($r == 0) {
                 die("createUser error: no user inserted\n");
@@ -30,48 +29,53 @@ class DAO {
         }
     }
 
-    function getAllFromId($id) {
-        $req = "SELECT * FROM utilisateur WHERE id='$id'";
+    function getAllFromId($username) {
+        $req = mysql_real_escape_string("SELECT * FROM user WHERE username='$username'");
         if ($req == NULL) {
             throw new Exception('Identifiant introuvable');
         }
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'utilisateur');
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'user');
             return $result;
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
 
-    function getUsersFromCategorie($categorie) {
-        $req = "SELECT * FROM utilisateur WHERE categorie='$categorie'";
+    function getUsersFromCategorie($type) {
+        $req = mysql_real_escape_string("SELECT * FROM user WHERE type='$type'");
         if ($req == NULL) {
-            throw new Exception('categorie introuvable');
+            throw new Exception('Type introuvable');
         }
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'utilisateur');
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'user');
             return $result;
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
 
-    function getUserFromIdAndMdp($id,$mdp) {
-          $req = "SELECT * FROM utilisateur WHERE id='$id'AND mdp='$mdp'";
+    function getUserFromIdAndMdp($username,$password) {
+          $req = mysql_real_escape_string("SELECT * FROM user WHERE username='$username'AND password='$password'");
         if ($req == NULL) {
-            throw new Exception('identifiant ou mot de passe erroné');
+            throw new Exception('Identifiant ou mot de passe erroné');
         }
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'utilisateur');
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'user');
             return $result;
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
         }
+    }
+    
+    function hashPassWord($password){
+        $one = 'b00kerPr0jEcT';
+        $two = 'SecuRed5DataBase';
+        $npassword = sha1($one.$password.$two);
+        return $npassword;
     }
 
 }
-
-?>
