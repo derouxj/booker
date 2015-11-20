@@ -1,5 +1,5 @@
 <?php
-
+require_once("DAO.class.php");
 include("../view/inscription.view.php");
 
 if (isset($_POST['valider'])) {

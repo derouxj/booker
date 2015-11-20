@@ -1,5 +1,5 @@
 <?php
-
+require_once("DAO.class.php");
 include("../view/connexion.view.php");
 
 $id;$pass;

@@ -11,8 +11,6 @@
     <body>
         <?php include("menu.view.php"); ?>
         <section id="main">
-            <p id="p1">Description de l'activité du site</p>
-
             <div id="nom">
                 <p id="p2">
                     <a href='../controller/demande.php'>
@@ -25,6 +23,7 @@
                     </a>
                 </p>
             </div>
+            <p id="p1">Description de l'activité du site</p>      
         </section>
     </body>
 </html>

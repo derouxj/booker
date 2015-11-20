@@ -89,7 +89,7 @@
                 <a href="../controller/artistes.php">
                     Artistes
                 </a>
-            </li><li>
+            </li><?php if (!isset($_SESSION['username'])) { ?><li>
                 <a href="../controller/inscription.php">
                     Inscription
                 </a>
@@ -98,6 +98,16 @@
                     Connexion
                 </a>
             </li>
+            <?php } else { ?><li>
+                    <a href="../controller/moncompte.php">
+                        Mon compte
+                    </a>
+                </li><li>
+                    <a href="../controller/deconnexion.php">
+                        Deconnexion
+                    </a>
+                </li>
+            <?php } ?>
         </ul>
     </nav>
 </div>
