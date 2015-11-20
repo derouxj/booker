@@ -22,7 +22,7 @@ class Users {
     private $infos;
     private $profilpic;
     
-    function __construct($u, $pa, $f, $l, $e, $pl, $t, $i, $pr){
+    function __construct($u=null, $pa=null, $f=null, $l=null, $e=null, $pl=null, $t=null, $i=null, $pr=null){
     if($u != null) {$this->username = $u;}
     if($u != null) {$this->password = $pa;}
     if($u != null) {$this->firstname = $f;}

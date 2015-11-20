@@ -1,5 +1,6 @@
 <?php
 
+require_once("../model/Users.php");
 
 $dao = new DAO();
 
@@ -46,8 +47,8 @@ class DAO {
                 return false;
             }
             else{
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
-            return $result;
+                $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+                return $result;
             }
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());

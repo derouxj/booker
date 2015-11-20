@@ -22,7 +22,7 @@ if(isset($_POST['valider'])) {
         //session_start();
         if($dao->rightPassword($username, $pass)){
             //$_SESSION['login']=$username;
-            setcookie("username",$username,time(3600));
+            setcookie("username",$username,time()+3600);
             //var_dump( $_SESSION['login']);
             
         }else {

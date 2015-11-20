@@ -12,12 +12,12 @@
         <?php
         include("menu.view.php");
         //tous les attributs de mon compte depuis $data['user']?>
-        <p>Identifiant : <?php echo $data['user']->getUsername(); ?></p>
-        <p>Nom : <?php echo $data['user']->getLastname(); ?></p>
-        <p>Prenom : <?php echo $data['user']->getFirstName(); ?></p>
-        <p>Email : <?php echo $data['user']->getEmail(); ?></p>
-        <p>Lieu : <?php echo $data['user']->getPlace(); ?></p>
-        <p>Infos : <?php echo $data['user']->getInfos(); ?></p>
-        <p>Image profil : <img src='<?php echo $data['user']->getEmail(); ?>' alt='image' height="200" width="200"></p>
+        <p>Identifiant : <?php echo $data['user'][0]->getUsername(); ?></p>
+        <p>Nom : <?php echo $data['user'][0]->getLastname(); ?></p>
+        <p>Prenom : <?php echo $data['user'][0]->getFirstName(); ?></p>
+        <p>Email : <?php echo $data['user'][0]->getEmail(); ?></p>
+        <p>Lieu : <?php echo $data['user'][0]->getPlace(); ?></p>
+        <p>Infos : <?php echo $data['user'][0]->getInfos(); ?></p>
+        <p>Image profil : <img src='<?php echo $data['user'][0]->getEmail(); ?>' alt='image' height="200" width="200"></p>
     </body>
 </html>
