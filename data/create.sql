@@ -1,11 +1,26 @@
-CREATE TABLE utilisateur (
-    id STRING primary key,
-    avatar STRING,
-    nom STRING,
-    prenom STRING,
+CREATE TABLE users (
+    username STRING primary key,
+    password STRING,
+    firstname STRING,
+    lastname STRING,
     email STRING,
-    lieu STRING,
-    categorie STRING,
-    mdp STRING,
-    description STRING
+    place STRING,
+    usertype STRING,
+    infos STRING,
+    profilpic STRING
+);
+
+CREATE TABLE event (
+    id integer primary key AUTOINCREMENT,
+    usernameBooker STRING references users(username),
+    usernameOrg STRING references users(username),
+    artists STRING references users(username),
+    eventDate STRING,
+    infos STRING
+);
+
+CREATE TABLE eventsOfUser(
+    username STRING references users(username),
+    id integer references event(id),
+    primary key(username, id)
 );
