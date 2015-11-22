@@ -13,27 +13,22 @@
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <fieldset>
                 <legend>
-                    Coordonnées
+                    Informations sur l'événement
                 </legend>
-                <p>
-                <div>Nom :</div><input type="text" name="id" autofocus>
+                
+                <p><ul class="liste"><li class="main">Booker demandé : </li><li class="sec"><SELECT name="book" size="1">
+                    <OPTION value="a">a
+                    <!-- si des bookers engregistrés : afficher une liste ici, en choisir un seul-->
+                </SELECT></li></ul>
                 </p>
-                <p>
-                <div>Numéro de téléphone :</div><input type="text" name="nom">
+                <p><ul class="listemult"><li class="main">Artistes demandés : </li><li class="sec"><SELECT name="art" size="4" multiple>
+                    <OPTION value="a">a
+                    <!-- si des artistes engregistrés : afficher une liste ici-->
+                </SELECT></li></ul>
                 </p>
-                <p>
-                <div>Email :</div><input type="email" name="email" placeholder="exemple@machin.fr">
+                <p><ul><li class="main">Type d'événement :</li><li class="sec"><input type="text" name="evt"></li></ul>
                 </p>
-            </fieldset>
-            <fieldset>
-                <legend>
-                    Autres infos
-                </legend>
-                <p><div>Artiste/booker dont j'ai besoin :</div><textarea name="who" rows=3></textarea>
-                </p>
-                <p><div>Informations événement :</div><textarea name="evt" rows=3></textarea>
-                </p>
-                <p><div>Description :</div><textarea name="desc" rows=3></textarea>
+                <p><ul class="area"><li class="main">Description :</li><li class="sec"><textarea name="desc" rows=3></textarea></li></ul>
                 </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Valider">

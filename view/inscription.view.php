@@ -16,35 +16,37 @@
                     Identité
                 </legend>
                 <p>
-                <div>Identifiant :</div><input type="text" name="id" autofocus>
+                <ul><li class="main">Identifiant :</li><li class="sec"><input type="text" name="id" autofocus></li></ul>
                 </p>
                 <p>
-                <div>Nom :</div><input type="text" name="nom">
+                <ul><li class="main">Nom :</li><li class="sec"><input type="text" name="nom"></li></ul>
                 </p>
                 <p>
-                <div>Prenom :</div><input type="text" name="prenom">
+                <ul><li class="main">Prenom :</li><li class="sec"><input type="text" name="prenom"></li></ul>
                 </p>
             </fieldset>
             <fieldset>
                 <legend>
                     Autres infos
                 </legend>
-                <p><div>Email :</div><input type="email" name="email" placeholder="exemple@machin.fr">
+                <ul><p><li class="main">Email :</li><li class="sec"><input type="email" name="email" placeholder="exemple@machin.fr"></li></ul>
                 </p>
-                <p><div>Lieu :</div><input type="text" name="lieu">
+                <ul><p><li class="main">Lieu :</li><li class="sec"><input type="text" name="lieu"></li></ul>
                 </p>
-                <p><div>Catégorie :</div>
+                <ul class="liste"><p><li class="main">Catégorie :</li>
+                    <li class="sec">
                 <SELECT name="type" size="1">
                     <OPTION value="a">Artiste
                     <OPTION value="b">Booker
                     <OPTION value="o">Autre
                 </SELECT>
+                    </li></ul>
                 </p>
-                <p><div>Mot de passe :</div><input type="password" name="password">
+                <p><ul><li class="main">Mot de passe :</li><li class="sec"><input type="password" name="password"></li></ul>
                 </p>
-                <p><div>Confirmation mot de passe :</div><input type="password" name="passwordconf">
+                <p><ul><li class="main">Confirmation mot de passe :</li><li class="sec"><input type="password" name="passwordconf"></li></ul>
                 </p>
-                <p><div>Description :</div><textarea name="desc" rows=3></textarea>
+                <p><ul class=area><li class="main">Description :</li><li class="sec"><textarea name="desc" rows="3"></textarea></li></ul>
                 </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Valider">

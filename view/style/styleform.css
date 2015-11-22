@@ -8,23 +8,55 @@ form {
 }
 
 
-form div{
+.main{
   background-image:linear-gradient(white, LightBlue);
+  margin-left: 5%;
+  display: inline-block;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 30%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
 }
 
-fieldset input, fieldset select, fieldset textarea {
-  margin-right: 20%;
+.sec{
   float : right;
-  width: 35%;
+  margin-right: 15%;
+  padding-top:0.75%;
+  width:40%;
 }
 
-fieldset select {
+.sec>input {
+  width:100%;
+}
+
+fieldset>ul{
+  list-style-type: none;
+}
+
+.liste select {
+  width:100%;
   background: white;
   margin-top: 1%;
 }
 
-fieldset textarea{
+.area>.main{
+  margin-top:3%;
+}
+
+.area>.sec>textarea{
+  width:100%;
   resize: none;
+}
+
+.listemult>.main {
+  margin-top:5%;
+  margin-bottom:5%;
+}
+
+.listemult>.sec>select {
+  width:100%;
 }
 
 fieldset {
@@ -47,19 +79,4 @@ input#valider {
 input#valider:hover {
   background-image:linear-gradient(LightBlue, blue);
   color:white;
-}
-
-div:not(.menu):not(.smenu) {
-  margin-left: 5%;
-  display: inline-block;
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 30%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  text-align: center;
-}
-
-form input{
-  margin-top: 1%;
 }

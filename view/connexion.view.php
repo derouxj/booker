@@ -16,10 +16,10 @@
                     Connexion
                 </legend>
                 <p>
-                <div>Identifiant :</div><input type="text" name="username" autofocus>
+                <ul><li class="main">Identifiant :</li><li class="sec"><input type="text" name="username" autofocus></li></ul>
                 </p>
                 <p>
-                <div>Mot de passe :</div><input type="password" name="pass">
+                <ul><li class="main">Mot de passe :</li><li class="sec"><input type="password" name="pass"></li></ul>
                 </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Se connecter">
