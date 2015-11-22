@@ -3,80 +3,79 @@ body {
 }
 
 form {
-  margin-left: 10%;
-  margin-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 
 .main{
-  background-image:linear-gradient(white, LightBlue);
-  margin-left: 5%;
-  display: inline-block;
-  border: solid 1px black;
-  border-radius: 5px;
-  width: 30%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  text-align: center;
+    background-image:linear-gradient(white, LightBlue);
+    margin-left: 5%;
+    display: inline-block;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 30%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
 }
 
 .sec{
-  float : right;
-  margin-right: 15%;
-  padding-top:0.75%;
-  width:40%;
+    float : right;
+    margin-right: 15%;
+    padding-top:0.75%;
+    width:40%;
 }
 
 .sec>input {
-  width:100%;
+    width:100%;
 }
 
 fieldset>ul{
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .liste select {
-  width:100%;
-  background: white;
-  margin-top: 1%;
+    width:100%;
+    background: white;
+    margin-top: 1%;
 }
 
 .area>.main{
-  margin-top:3%;
+    margin-top:3%;
 }
 
 .area>.sec>textarea{
-  width:100%;
-  resize: none;
+    width:100%;
+    resize: none;
 }
 
 .listemult>.main {
-  margin-top:5%;
-  margin-bottom:5%;
+    margin-bottom:5%;
 }
 
 .listemult>.sec>select {
-  width:100%;
+    width:100%;
 }
 
 fieldset {
-  border: solid 1px gray;
-  border-radius: 5px;
+    border: solid 1px gray;
+    border-radius: 5px;
 }
 
 input#valider {
-  background-image:linear-gradient(white, LightBlue);
-  margin-top: 1%;
-  width: 50%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  margin-left: 25%;
-  margin-right: 25%;
-  font-size: 100%;
-  font-weight: bold;
+    background-image:linear-gradient(white, LightBlue);
+    margin-top: 1%;
+    width: 50%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 100%;
+    font-weight: bold;
 }
 
 input#valider:hover {
-  background-image:linear-gradient(LightBlue, blue);
-  color:white;
+    background-image:linear-gradient(LightBlue, blue);
+    color:white;
 }

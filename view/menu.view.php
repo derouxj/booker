@@ -98,14 +98,14 @@
                     Connexion
                 </a>
             </li><?php } else { ?><li>
-                    <a href="../controller/moncompte.php">
-                        Mon compte
-                    </a>
-                </li><li>
-                    <a href="../controller/deconnexion.php">
-                        Deconnexion
-                    </a>
-                </li>
+                <a href="../controller/moncompte.php">
+                    Mon compte
+                </a>
+            </li><li>
+                <a href="../controller/deconnexion.php">
+                    Deconnexion
+                </a>
+            </li>
             <?php } ?>
         </ul>
     </nav>

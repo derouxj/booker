@@ -11,19 +11,18 @@
     <body>
         <?php include("menu.view.php"); ?>
         <section id="main">
-            <div id="nom">
-                <p id="p2">
-                    <a href='../controller/demande.php'>
-                        Demande de réservation
-                    </a>
-                </p>
-                <p id="p3">
-                    <a href='../controller/contact.php'>
-                        Demande de contact
-                    </a>
-                </p>
+            <?php if (!isset($_COOKIE['username'])) { ?>
+            <div id="dem">
+                <a href='../controller/demande.php'>
+                    Demande de booking
+                </a>
             </div>
-            <p id="p1">Description de l'activité du site</p>      
+            <?php } ?>
+            <div id="desc">Description de l'activité du site</div>   
+            <div id="contact">
+                <a href='../controller/contact.php'>Nous contacter</a>
+            </div>
         </section>
     </body>
 </html>
+

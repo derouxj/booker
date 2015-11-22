@@ -35,11 +35,11 @@
                 </p>
                 <ul class="liste"><p><li class="main">Catégorie :</li>
                     <li class="sec">
-                <SELECT name="type" size="1">
-                    <OPTION value="a">Artiste
-                    <OPTION value="b">Booker
-                    <OPTION value="o">Autre
-                </SELECT>
+                        <SELECT name="type" size="1">
+                            <OPTION value="a">Artiste
+                            <OPTION value="b">Booker
+                            <OPTION value="o">Autre
+                        </SELECT>
                     </li></ul>
                 </p>
                 <p><ul><li class="main">Mot de passe :</li><li class="sec"><input type="password" name="password"></li></ul>

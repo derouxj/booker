@@ -12,10 +12,10 @@
         <?php include('menu.view.php'); ?>
     <center><p> LES ART-i-I-i-I-i-I-i-I-STEUH sont pas là </p></center>
     <!-- <?php foreach ($data['artistes'] as $value) { ?>
-        <div>
-            <img src='<?php echo $value->image() ?>'>
-            <?php echo $value->nom() . ' ' . $value->prenom(); ?>
-        </div>
+                <div>
+                    <img src='<?php echo $value->image() ?>'>
+        <?php echo $value->nom() . ' ' . $value->prenom(); ?>
+                </div>
     <?php } ?> -->
 </body>
 </html>

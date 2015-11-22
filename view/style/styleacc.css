@@ -3,40 +3,42 @@ body {
 }
 
 section {
-  margin-left: 10%;
-  margin-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-#p1 {
-  border : solid black 1px;
-  margin-left:auto;
-  margin-right:auto;
-  border-radius : 10px;
-  padding:20%;
-  text-align: center;
+#desc {
+    border : solid black 1px;
+    text-align: center;
+    margin-top:5%;
+    border-radius : 10px;
+    padding:20%;
 }
 
-#nom {
-  margin-right:10%;
-  margin-left:10%;
-  margin-top:10%;
-  text-align:center;
+#dem {
+    border : solid black 1px;
+    text-align: center;
+    margin-right:18em;
 }
 
-#p2 {
-  display:inline;
-  border : solid black 1px;
-  border-radius : 10px;
-  text-align: center;
-  margin-right:10%;
-  padding:5%;
+#contact{
+    margin-top:2.5%;
+    border : solid black 1px;
+    text-align:center;
+    margin-left:22em;
 }
 
-#p3{
-  display:inline;
-  border : solid black 1px;
-  border-radius : 10px;
-  text-align: center;
-  margin-left:10%;
-  padding:5%;
-}  
+a {
+    display: block;
+    background-image:linear-gradient(white, LightBlue);
+    text-decoration:none;
+}
+
+a:visited {
+    color : purple;
+}
+
+a:hover {
+    background-image:linear-gradient(LightBlue, blue);
+    color : white;
+}

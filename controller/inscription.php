@@ -9,7 +9,7 @@ if (isset($_POST['valider'])) {
 //ajout d'un objet utilisateur à la BDD
     $correct = 1;
     if (isset($_POST['valider'])) {
-        if (isset($_POST['id']) && !$dao->getAllFromUserName($_POST['id']) ) {
+        if (isset($_POST['id']) && !$dao->getAllFromUserName($_POST['id'])) {
             $id = $_POST['id'];
         } else {
 //notifier qu'il faut remplir le champ/qu'il n'existe pas deja
@@ -38,8 +38,8 @@ if (isset($_POST['valider'])) {
             $correct = 0;
         }
         $desc = $_POST['desc'];
-        
-        if($correct) {
+
+        if ($correct) {
 //on cree notre obj user et on l'add a la bdd
             $user = new Users($id, $dao->hashPassWord($password), $prenom, $nom, $email, $lieu, $type, $desc, 'Default');
             $dao->insertUser($user);
