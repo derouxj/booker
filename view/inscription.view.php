@@ -29,11 +29,11 @@
                 <legend>
                     Autres infos
                 </legend>
-                <ul><p><li class="main">Email :</li><li class="sec"><input type="email" name="email" placeholder="exemple@machin.fr"></li></ul>
+                <ul><p><li class="main">E-mail :</li><li class="sec"><input type="email" name="email" placeholder="exemple@machin.fr"></li></ul>
                 </p>
-                <ul><p><li class="main">Lieu :</li><li class="sec"><input type="text" name="lieu"></li></ul>
+                <ul><p><li class="main">Ville :</li><li class="sec"><input type="text" name="ville"></li></ul>
                 </p>
-                <ul class="liste"><p><li class="main">Catégorie :</li>
+                <ul class="liste"><p><li class="main">Catégorie d'utilisateur :</li>
                     <li class="sec">
                         <SELECT name="type" size="1">
                             <OPTION value="a">Artiste
