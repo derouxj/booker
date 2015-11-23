@@ -11,6 +11,7 @@
     <body>
         <?php include('menu.view.php'); ?>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+            <?php if (!isset($_COOKIE['username'])) { ?>
             <fieldset>
                 <legend>
                     Identité
@@ -31,7 +32,7 @@
                 </legend>
                 <ul><p><li class="main">E-mail :</li><li class="sec"><input type="email" name="email" placeholder="exemple@machin.fr"></li></ul>
                 </p>
-                <ul><p><li class="main">Ville :</li><li class="sec"><input type="text" name="ville"></li></ul>
+                <ul><p><li class="main">Ville :</li><li class="sec"><input type="text" name="lieu"></li></ul>
                 </p>
                 <ul class="liste"><p><li class="main">Catégorie d'utilisateur :</li>
                     <li class="sec">
@@ -50,6 +51,9 @@
                 </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Valider">
+            <?php } else {
+            echo '<center><p>Vous devez vous déconnecter pour accéder à cette page</p></center>';
+            } ?>
         </form>
     </body>
 </html>

@@ -11,6 +11,7 @@
     <body>
         <?php include('menu.view.php'); ?>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+            <?php if (!isset($_COOKIE['username'])) { ?>
             <fieldset>
                 <legend>
                     Connexion
@@ -23,6 +24,9 @@
                 </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Se connecter">
+            <?php } else {
+            echo '<center><p>Vous êtes déjà connecté</p></center>';
+            } ?>
         </form>
     </body>
 </html>
