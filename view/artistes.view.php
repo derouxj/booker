@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php include('menu.view.php'); ?>
-    <center><p> Les artistes sont pas encore là (WIP)</p></center>
+    <center><p> Les artistes ne sont pas encore là (WIP)</p></center>
     <!-- <?php foreach ($data['artistes'] as $value) { ?>
                 <div>
                     <img src='<?php echo $value->image() ?>'>

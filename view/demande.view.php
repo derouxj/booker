@@ -29,7 +29,11 @@
                                 <!-- si des artistes engregistrés : afficher une liste ici-->
                         </SELECT></li></ul>
                 </p>
-                <p><ul><li class="main">Type d'événement :</li><li class="sec"><input type="text" name="evt"></li></ul>
+                <p><ul><li class="main">Nom de l'événement :</li><li class="sec"><input type="text" name="name"></li></ul>
+                </p>
+                <p><ul><li class="main">Lieu de déroulement de l'événement :</li><li class="sec"><input type="text" name="place"></li></ul>
+                </p>
+                <p><ul><li class="main">Date de l'événement :</li><li class="sec"><input type="text" name="evt"></li></ul>
                 </p>
                 <p><ul class="area"><li class="main">Description de l'événement:</li><li class="sec"><textarea name="desc" rows=3></textarea></li></ul>
                 </p>
