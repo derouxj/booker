@@ -9,35 +9,37 @@ if (isset($_POST['valider'])) {
     $correct = 1;
     $s = "";
     if (isset($_POST['valider'])) {
-        if (isset($_POST['id']) && !$dao->getAllFromUserName($_POST['id'])) {
+        if (($_POST['id'])!='' && !$dao->getAllFromUserName($_POST['id'])) {
             $id = $_POST['id'];
         } else {
-            $s .= "\n   - Identifiant";
+            $s .= '\n   - Identifiant';
             $correct = 0;
         }
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        if (isset($_POST['email']) && $_POST['email'] != '') {
+        if($_POST['nom'] != ''){$nom = $_POST['nom'];}
+        else{$s .= '\n   - Nom';}
+        if($_POST['prenom'] != ''){$prenom = $_POST['prenom'];}
+        else{$s .= '\n   - Prenom';}
+        if ($_POST['email'] != '') {
             $email = $_POST['email'];
         } else {
-            $s .= "\n   - Email";
+            $s .= '\n   - Email';
             $correct = 0;
         }
         $lieu = $_POST['lieu'];
         $type = $_POST['type'];
-        if (isset($_POST['password']) && $_POST['password'] != '') {
-            if (isset($_POST['passwordconf']) && $_POST['passwordconf'] != '' &&
-                    $_POST['passwordconf'] == $_POST['password']) {
+        if ($_POST['password'] != '') {
+            if ($_POST['passwordconf'] == $_POST['password']) {
                 $password = $_POST['password'];
             } else {
-                $s .= "\n   - Le mot de passe et sa confirmation doivent être identique";
+                $s .= '\n   - Le mot de passe et sa confirmation doivent être identique';
                 $correct = 0;
             }
         } else {
-            $s .= "\n   - Mot de passe";
+            $s .= '\n   - Mot de passe';
             $correct = 0;
         }
         $desc = $_POST['desc'];
+        unset($_POST['fieldnotset']);
         if($s != "") {$_POST['fieldnotset'] = $s;}
         if ($correct) {
             $user = new Users($id, $dao->hashPassWord($password), $prenom, $nom, $email, $lieu, $type, $desc, 'Default');

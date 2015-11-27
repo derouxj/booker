@@ -27,7 +27,7 @@
                 ?>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Se connecter">
-            <?php } if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir le(s) champ(s) suivants : '.$_POST['fieldnotset'].'")</script>';} ?>
+            <?php } if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir le(s) champ(s) suivants : '.$_POST['fieldnotset'].'")</script>';}?>
         </form>
     </body>
 </html>
