@@ -9,13 +9,13 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
-    <center><p> Les artistes ne sont pas encore là (WIP)</p></center>
-    <!-- <?php foreach ($data['artistes'] as $value) { ?>
-                <div>
-                    <img src='<?php echo $value->image() ?>'>
-        <?php echo $value->nom() . ' ' . $value->prenom(); ?>
-                </div>
-    <?php } ?> -->
+        <?php include('menu.view.php');
+        if(isset($data['artistes'])){
+            foreach ($data['artistes'] as $value) { 
+                echo $value->getFirstName();
+                echo '</br>';
+            }
+        }
+ ?>
 </body>
 </html>
