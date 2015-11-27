@@ -6,13 +6,13 @@ include_once("../model/DAO.class.php");
 $dao = new DAO();
 
 if (isset($_POST['valider'])) {
-//ajout d'un objet utilisateur à la BDD
     $correct = 1;
+    $s = "";
     if (isset($_POST['valider'])) {
         if (isset($_POST['id']) && !$dao->getAllFromUserName($_POST['id'])) {
             $id = $_POST['id'];
         } else {
-//notifier qu'il faut remplir le champ/qu'il n'existe pas deja
+            $s .= "\n   - Identifiant";
             $correct = 0;
         }
         $nom = $_POST['nom'];
@@ -20,7 +20,7 @@ if (isset($_POST['valider'])) {
         if (isset($_POST['email']) && $_POST['email'] != '') {
             $email = $_POST['email'];
         } else {
-//notifier qu'il faut remplir le champ
+            $s .= "\n   - Email";
             $correct = 0;
         }
         $lieu = $_POST['lieu'];
@@ -30,17 +30,16 @@ if (isset($_POST['valider'])) {
                     $_POST['passwordconf'] == $_POST['password']) {
                 $password = $_POST['password'];
             } else {
-//notifier qu'il faut remplir le champ/que le passconf!=pass
+                $s .= "\n   - Le mot de passe et sa confirmation doivent être identique";
                 $correct = 0;
             }
         } else {
-//notifier qu'il faut remplir le champ
+            $s .= "\n   - Mot de passe";
             $correct = 0;
         }
         $desc = $_POST['desc'];
-
+        if($s != "") {$_POST['fieldnotset'] = $s;}
         if ($correct) {
-//on cree notre obj user et on l'add a la bdd
             $user = new Users($id, $dao->hashPassWord($password), $prenom, $nom, $email, $lieu, $type, $desc, 'Default');
             $dao->insertUser($user);
             unset($user);
