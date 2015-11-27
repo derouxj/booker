@@ -6,27 +6,31 @@ include_once("../model/DAO.class.php");
 $dao = new DAO();
 if (isset($_POST['valider'])) {
     $correct = 1;
-    if (isset($_POST['username']) && $_POST['username'] != '') {
+    $s = "";
+    if ($_POST['username']!='' && !empty($dao->getAllFromUserName($_POST['username']))) {
         $username = $_POST['username'];
     } else {
-        //notifier qu'il faut remplir le champ
+        if($_POST['username']==''){
+            $s .= '\n   - Identifiant';
+            $_POST['fieldnotset'] = $s;
+        }
         $correct = 0;
     }
-    if (isset($_POST['pass']) && $_POST['pass'] != '') {
+    if ($_POST['pass'] != '') {
         $pass = $_POST['pass'];
     } else {
-        //notifier qu'il faut remplir le champ
+        $s .= '\n   - Mot de passe';
+        $_POST['fieldnotset'] = $s;
         $correct = 0;
     }
     if ($correct) {
-        //session_start();
         if ($dao->rightPassword($username, $pass)) {
-            //$_SESSION['login']=$username;
             setcookie("username", $username, time() + 3600);
-            //var_dump( $_SESSION['login']);
-        } else {
-            //notifier user/mdp incorrect
-        }
+            header('Location: ../controller/accueil.php');
+            unset($_POST['nouserfound']);
+        } 
+    }else if($s==""){
+        $_POST['nouserfound'] = 1;
     }
 }
 include("../view/connexion.view.php");

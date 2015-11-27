@@ -55,11 +55,16 @@ class DAO {
     }
 
     function getUsersFromUserType($type) {
-        $req = $this->db->quote("SELECT * FROM users WHERE type='$type'");
+        $type = $this->db->quote($type);
+        $req = ("SELECT * FROM users WHERE usertype=$type");
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
-            return $result;
+            if (!$res1) {
+                return false;
+            } else {
+                $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+                return $result;
+            }
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
         }

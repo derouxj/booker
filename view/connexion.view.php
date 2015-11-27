@@ -17,16 +17,17 @@
                     Connexion
                 </legend>
                 <p>
-                <ul><li class="main">Identifiant :</li><li class="sec"><input type="text" name="username" autofocus></li></ul>
+                <ul><li class="main">Identifiant :</li><li class="sec"><input type="text" name="username" autofocus></li>
+                </ul>
                 </p>
                 <p>
                 <ul><li class="main">Mot de passe :</li><li class="sec"><input type="password" name="pass"></li></ul>
                 </p>
+                <?php if(isset($_POST['nouserfound'])) {echo '<p><ul><li class="sec">Identifiant ou mot de passe incorrect<center></li></ul></p>';}
+                ?>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Se connecter">
-            <?php } else {
-            echo '<center><p>Vous êtes déjà connecté</p></center>';
-            } ?>
+            <?php } if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir le(s) champ(s) suivants : '.$_POST['fieldnotset'].'")</script>';}?>
         </form>
     </body>
 </html>
