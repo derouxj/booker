@@ -21,7 +21,8 @@
                 <p>Email : <?php echo $data['user'][0]->getEmail(); ?></p>
                 <p>Ville : <?php echo $data['user'][0]->getPlace(); ?></p>
                 <p>Infos : <?php echo $data['user'][0]->getInfos(); ?></p>
-                <p>Image profil : <img src='<?php echo $data['user'][0]->getEmail(); ?>' alt='image' height="200" width="200"></p>
+                <p>Image profil : <img src='<?php echo $data['user'][0]->getProfilPic(); ?>' alt='image' height="200" width="200"></p>
+                <p><a href="../controller/changeacc.php">Modifier</a></p>
             <?php } else {
                 echo '<center><p>Vous devez être connecté pour voir cette page</p></center>';
             } ?>

@@ -21,7 +21,7 @@ class DAO {
         try {
             $name = $this->db->quote($user->getUsername());
             $pw = $this->db->quote($user->getPassword());
-            $fn = $this->db->quote($user->getFirstNAme());
+            $fn = $this->db->quote($user->getFirstName());
             $ln = $this->db->quote($user->getLastName());
             $em = $this->db->quote($user->getEmail());
             $pl = $this->db->quote($user->getPlace());
@@ -85,8 +85,6 @@ class DAO {
             if (!$res1) {
                 return false;
             } else {
-                //$result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
-                //var_dump($result);
                 return true;
             }
         } catch (PDOException $e) {
@@ -99,6 +97,40 @@ class DAO {
         $two = 'SecuRed5DataBase';
         $npassword = sha1($one . $password . $two);
         return $npassword;
+    }
+    
+    //update un user avec un objet user
+    function updateUser($un,$fn,$ln,$em,$pl,$in,$pp) {
+        $un = $this->db->quote($un);
+        $fn = $this->db->quote($fn);
+        $ln = $this->db->quote($ln);
+        $em = $this->db->quote($em);
+        $pl = $this->db->quote($pl);
+        $in = $this->db->quote($in);
+        $pp = $this->db->quote($pp);
+        $req = "UPDATE users SET firstname=$fn, lastname=$ln, email=$em, place=$pl, infos=$in, profilpic=$pp WHERE username=$un";
+        try {
+            $r = $this->db->exec($req);
+            if ($r == 0) {
+                die("updateUser error: no user updated\n");
+            }
+        } catch (PDOException $e) {
+            die("PDO Error :" . $e->getMessage());
+        }
+    }
+    
+    function updatePassword($un,$pw) {
+        $pw = $this->db->quote($this->hashPassWord($pw));
+        $un = $this->db->quote($un);
+        $req = "UPDATE users SET password=$pw WHERE username=$un";
+        try {
+            $r = $this->db->exec($req);
+            if ($r == 0) {
+                die("updateUser error: no password user updated\n");
+            }
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
     }
 
 }
