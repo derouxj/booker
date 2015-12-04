@@ -16,17 +16,26 @@
                 <legend>
                     Informations sur l'événement
                 </legend>
-
                 <p><ul class="liste"><li class="main">Booker demandé : </li><li class="sec">
                         <SELECT name="booker" size="1">
-                            <OPTION value="a">Booker B.
-                                <!-- si des bookers engregistrés : afficher une liste ici, en choisir un seul-->
+                            <?php
+                            $i=1;
+                            foreach($bookers as $b){
+                                echo '<OPTION value="'.$i.'">'.$b->getUsername();
+                                $i++;
+                            }
+                            ?> 
                         </SELECT></li></ul>
                 </p>
                 <p><ul class="listemult"><li class="main">Artistes demandés : </li><li class="sec">
                         <SELECT name="artist" size="4" multiple>
-                            <OPTION value="a">Artiste A.
-                                <!-- si des artistes engregistrés : afficher une liste ici-->
+                        <?php
+                            $i=1;
+                            foreach($artists as $a){
+                                echo '<OPTION value="'.$i.'">'.$a->getUsername();
+                                $i++;
+                            }
+                            ?> 
                         </SELECT></li></ul>
                 </p>
                 <p><ul><li class="main">Nom de l'événement :</li><li class="sec"><input type="text" name="name"></li></ul>
@@ -39,7 +48,8 @@
                 </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Valider">
-            <?php } else {
+            <?php if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir tout les champs d\'information.")</script>';}
+            } else {
             echo '<center><p>Vous devez être connecté pour voir cette page</p></center>';
             } ?>
         </form>

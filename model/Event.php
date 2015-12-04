@@ -25,7 +25,6 @@ class Event {
     private $artists;
     private $eventDate;
     private $infos;
-}
 
     function __construct($i=null, $uB=null, $uO=null, $a=null, $e=null, $inf=null){
         if($i){
@@ -63,3 +62,5 @@ class Event {
     function getInfos(){
         return $this->infos;
     }
+    
+}

@@ -28,7 +28,6 @@ if (isset($_POST['valider'])) {
             setcookie("username", $username, time() + 3600);
             unset($_POST['nouserfound']);
             header('Location: ../controller/accueil.php');
-            
         } 
     }else if($s==""){
         $_POST['nouserfound'] = 1;
