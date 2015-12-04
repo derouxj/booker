@@ -1,73 +1,8 @@
-<style type="text/css">
-
-    .menu nav ul{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        //overflow: hidden;
-        text-align : center;
-    }
-
-
-    .menu nav ul li{
-        display: inline-block;
-        text-align: center;
-        width: 20%;
-        border: solid black 1px;
-        border-left : 0px;
-    }
-
-    .menu a {
-        display: block;
-        background-image:linear-gradient(white, LightBlue);
-        text-decoration:none;
-    }
-
-    .menu a:visited {
-        color : purple;
-    }
-
-    .menu a:hover {
-        background-image:linear-gradient(LightBlue, blue);
-        color : white;
-    }
-
-    .menu nav ul li:first-child {
-        border-left: solid black 2px;
-        border-top-left-radius : 5px;
-        border-bottom-left-radius : 5px;
-    }
-
-    .menu nav ul li:last-child {
-        border-right: solid black 2px;
-        border-top-right-radius : 5px;
-        border-bottom-right-radius : 5px;
-    }
-
-    .menu {
-        margin-top: 3%;
-        margin-bottom: 3%;
-    }
-
-    .menu > ul {
-        margin-bottom : 3%;
-        text-align : right;
-        margin-right : 1em;
-    }
-
-    .menu > ul > li {
-        margin-right:1px;
-        margin-left:1px;
-        display: inline-block;
-        text-align: center;
-        width: 10%;
-        border: solid black 1px;
-        border-collapse : collapse;
-        border-radius : 3px;
-    }
-
-</style>
-
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../view/style/stylemenu.css" />
+<html>
 <div class="menu">
     <ul>
         <img src='http://www.dolfyn.net/dolfyn/icons/union-jack.png'height= 12 width = 17><li>
@@ -110,3 +45,4 @@
         </ul>
     </nav>
 </div>
+</html>
