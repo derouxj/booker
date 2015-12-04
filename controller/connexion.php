@@ -5,33 +5,32 @@ include_once("../model/DAO.class.php");
 
 $dao = new DAO();
 if (isset($_POST['valider'])) {
-    $correct = 1;
     $s = "";
+    $correct=1;
     if ($_POST['username']!='' && !empty($dao->getAllFromUserName($_POST['username']))) {
         $username = $_POST['username'];
     } else {
         if($_POST['username']==''){
             $s .= '\n   - Identifiant';
-            $_POST['fieldnotset'] = $s;
+            $correct=0;
         }
-        $correct = 0;
     }
     if ($_POST['pass'] != '') {
         $pass = $_POST['pass'];
     } else {
         $s .= '\n   - Mot de passe';
-        $_POST['fieldnotset'] = $s;
         $correct = 0;
     }
+    unset($_POST['fieldnotset']);
     if ($correct) {
         if ($dao->rightPassword($username, $pass)) {
             setcookie("username", $username, time() + 3600);
             header('Location: ../controller/accueil.php');
-            unset($_POST['nouserfound']);
-        } 
-    }else if($s==""){
-        $_POST['nouserfound'] = 1;
+        } else {
+            $s .= '\n   - Identifiant ou mot de passe incorrect';
+        }
     }
+    if ($s != "") {$_POST['fieldnotset'] = $s;}
 }
 include("../view/connexion.view.php");
 ?>

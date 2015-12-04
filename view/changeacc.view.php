@@ -27,11 +27,9 @@
                 
                 <ul class=area><li class="main">Description :</li><li class="sec"><textarea name="infos" rows="3"><?php echo $data['user'][0]->getInfos(); ?></textarea></li></ul>
                 
-                <ul><li class="main">Mot de passe :</li><li class="sec"><a href="../controller/changepass">Changer</a></li></ul>
+                <ul><li class="main">Mot de passe :</li><li class="sec"><a href="../controller/changepass.php">Changer</a></li></ul>
 
-                <ul><li class="main">Image :</li><li class="sec"><img src="<?php echo $data['user'][0]->getProfilPic(); ?>" alt="image" height="200" width="200"></li></ul>
-
-                <ul><li class="sec"><input type="text" name="pic" value="<?php echo $data['user'][0]->getProfilPic(); ?>"></li></ul>
+                <ul><li class="main">URL image :</li><li class="sec"><input type="text" name="pic" value="<?php echo $data['user'][0]->getProfilPic(); ?>"></li></ul>
 
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Sauvegarder modifications">

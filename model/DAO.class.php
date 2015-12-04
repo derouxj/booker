@@ -87,10 +87,11 @@ class DAO {
         $req = "SELECT * FROM users WHERE username=$un and password=$pw";
         try {
             $res1 = $this->db->query($req);
-            if (!$res1) {
-                return false;
-            } else {
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+            if (!empty($result)) {
                 return true;
+            } else {
+                return false;
             }
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
