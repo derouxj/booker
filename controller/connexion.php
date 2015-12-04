@@ -22,13 +22,13 @@ if (isset($_POST['valider'])) {
         $correct = 0;
     }
     unset($_POST['fieldnotset']);
-    if ($correct) {
+    if ($correct && isset($username)) {
         if ($dao->rightPassword($username, $pass)) {
             setcookie("username", $username, time() + 3600);
             header('Location: ../controller/accueil.php');
-        } else {
-            $s .= '\n   - Identifiant ou mot de passe incorrect';
         }
+    } else {
+        $s .= '\n   - Identifiant ou mot de passe incorrect';
     }
     if ($s != "") {$_POST['fieldnotset'] = $s;}
 }
