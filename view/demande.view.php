@@ -16,30 +16,38 @@
                 <legend>
                     Informations sur l'événement
                 </legend>
-
                 <p><ul class="liste"><li class="main">Booker demandé : </li><li class="sec">
-                        <SELECT name="book" size="1">
-                            <OPTION value="a">Booker B.
-                                <!-- si des bookers engregistrés : afficher une liste ici, en choisir un seul-->
+                        <SELECT name="booker" size="1">
+                            <?php
+                            $i=1;
+                            foreach($bookers as $b){
+                                echo '<OPTION value="'.$i.'">'.$b->getUsername();
+                                $i++;
+                            }
+                            ?> 
                         </SELECT></li></ul>
                 </p>
                 <p><ul class="listemult"><li class="main">Artistes demandés : </li><li class="sec">
-                        <SELECT name="art" size="4" multiple>
-                            <OPTION value="a">Artiste A.
-                                <!-- si des artistes engregistrés : afficher une liste ici-->
+                        <SELECT name="artists[]" size="4" multiple>
+                        <?php
+                            foreach($artists as $a){
+                                echo '<OPTION value="'.$a->getUsername().'">'.$a->getUsername();
+                            }
+                            ?> 
                         </SELECT></li></ul>
                 </p>
                 <p><ul><li class="main">Nom de l'événement :</li><li class="sec"><input type="text" name="name"></li></ul>
                 </p>
                 <p><ul><li class="main">Lieu de déroulement de l'événement :</li><li class="sec"><input type="text" name="place"></li></ul>
                 </p>
-                <p><ul><li class="main">Date de l'événement :</li><li class="sec"><input type="text" name="evt"></li></ul>
+                <p><ul><li class="main">Date de l'événement :</li><li class="sec"><input type="text" name="date"></li></ul>
                 </p>
                 <p><ul class="area"><li class="main">Description de l'événement:</li><li class="sec"><textarea name="desc" rows=3></textarea></li></ul>
                 </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Valider">
-            <?php } else {
+            <?php if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir tout les champs d\'information.")</script>';}
+            } else {
             echo '<center><p>Vous devez être connecté pour voir cette page</p></center>';
             } ?>
         </form>
