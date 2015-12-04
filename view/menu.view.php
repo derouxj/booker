@@ -1,6 +1,8 @@
-
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="../view/style/stylemenu.css" />
-
+<html>
 <div class="menu">
     <ul>
         <img src='http://www.dolfyn.net/dolfyn/icons/union-jack.png'height= 12 width = 17><li>
@@ -43,3 +45,4 @@
         </ul>
     </nav>
 </div>
+</html>
