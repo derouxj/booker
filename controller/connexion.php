@@ -26,8 +26,9 @@ if (isset($_POST['valider'])) {
     if ($correct) {
         if ($dao->rightPassword($username, $pass)) {
             setcookie("username", $username, time() + 3600);
-            header('Location: ../controller/accueil.php');
             unset($_POST['nouserfound']);
+            header('Location: ../controller/accueil.php');
+            
         } 
     }else if($s==""){
         $_POST['nouserfound'] = 1;

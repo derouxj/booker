@@ -24,31 +24,31 @@ class Users {
     private $profilpic;
 
     function __construct($u = null, $pa = null, $f = null, $l = null, $e = null, $pl = null, $t = null, $i = null, $pr = null) {
-        if ($u != null) {
+        if ($u) {
             $this->username = $u;
         }
-        if ($u != null) {
+        if ($pa) {
             $this->password = $pa;
         }
-        if ($u != null) {
+        if ($f) {
             $this->firstname = $f;
         }
-        if ($u != null) {
+        if ($l) {
             $this->lastname = $l;
         }
-        if ($u != null) {
+        if ($e) {
             $this->email = $e;
         }
-        if ($u != null) {
+        if ($pl) {
             $this->place = $pl;
         }
-        if ($u != null) {
+        if ($t) {
             $this->usertype = $t;
         }
-        if ($u != null) {
+        if ($i) {
             $this->infos = $i;
         }
-        if ($u != null) {
+        if ($pr) {
             $this->profilpic = $pr;
         }
     }

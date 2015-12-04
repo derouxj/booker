@@ -45,6 +45,7 @@ if (isset($_POST['valider'])) {
             $user = new Users($id, $dao->hashPassWord($password), $prenom, $nom, $email, $lieu, $type, $desc, 'Default');
             $dao->insertUser($user);
             unset($user);
+            header('Location: ../controller/accueil.php');
         }
     }
 }
