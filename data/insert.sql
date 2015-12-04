@@ -1,3 +1,13 @@
+INSERT INTO users VALUES ("jejej","test","jeremy","carre","jeje@test.fr","maville","booker","les infos","img.png");
+INSERT INTO contacts VALUES (2,"jejej","le prenom","le nom","l'email@test.fr","la-ville","son metiers","0642350091","il a plein d'info super utile qu'il ne faut pas oublier meme si s'est tres long voir trop long il faudra que ca soit beau et bien placé");
+INSERT INTO contacts VALUES (3,"jejej","le prenom","le nom","l'email@test.fr","la-ville","le metiers","0"+"000642350091","il a plein d'info super utile qu'il ne faut pas oublier meme si s'est tres long voir trop long il faudra que ca soit beau et bien placé");
+
+
+
+
+
+
+/*
 CREATE TABLE users (
     username STRING primary key,
     password STRING,
@@ -33,6 +43,6 @@ CREATE TABLE contacts(
     email STRING,
     town STRING,
     job STRING,
-    phone STRING,
+    phone integer,
     other STRING
-);
+);*/

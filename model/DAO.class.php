@@ -100,5 +100,17 @@ class DAO {
         $npassword = sha1($one . $password . $two);
         return $npassword;
     }
+    
+    function getCarnet($proprietaire) {
+        $req="SELECT * FROM contacts WHERE usernameProp='$proprietaire'";//il ne faudrait pas tout prendre, a modifier
+        //var_dump($req);
+        try {
+            $res1 = $this->db->query($req);
+            $result = $res1->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
 
 }
