@@ -28,12 +28,10 @@
                         </SELECT></li></ul>
                 </p>
                 <p><ul class="listemult"><li class="main">Artistes demandés : </li><li class="sec">
-                        <SELECT name="artist" size="4" multiple>
+                        <SELECT name="artists[]" size="4" multiple>
                         <?php
-                            $i=1;
                             foreach($artists as $a){
-                                echo '<OPTION value="'.$i.'">'.$a->getUsername();
-                                $i++;
+                                echo '<OPTION value="'.$a->getUsername().'">'.$a->getUsername();
                             }
                             ?> 
                         </SELECT></li></ul>

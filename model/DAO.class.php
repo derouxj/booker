@@ -39,17 +39,25 @@ class DAO {
         }
     }
     
-    function insertEvent(Event $event){
+    function insertEvent(Event $event, $arts){
         try {
             $unB = $this->db->quote($event->getUsernameBooker());
             $unO = $this->db->quote($event->getUsernameOrg());
-            $arts = $this->db->quote($event->getArtists());
             $evtD = $this->db->quote($event->getEventDate());
             $infos = $this->db->quote($event->getInfos());
-            $q = "INSERT INTO event(usernameBooker,usernameOrg,artists,eventDate,infos) VALUES ($unB,$unO,$arts,$evtD,$infos)";
+            $q = "INSERT INTO event(usernameBooker,usernameOrg,eventDate,infos) VALUES ($unB,$unO,$evtD,$infos)";
             $r = $this->db->exec($q);
             if ($r == 0) {
                 die("createEvent error: no event inserted\n");
+            }
+            $q= "SELECT * FROM event ORDER BY id DESC LIMIT 1";
+            $r = $this->db->query($q)->fetchAll(PDO::FETCH_CLASS,'Event')[0];
+            var_dump($arts);
+            foreach($arts as $a){
+                $id = $this->db->quote($r->getId());
+                $username = $this->db->quote($a);
+                $q = "INSERT INTO eventsOfUser VALUES ($id, $username)";
+                $this->db->exec($q);
             }
         } catch (PDOException $e) {
             die("PDO Error :" . $e->getMessage());

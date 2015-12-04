@@ -11,10 +11,9 @@ CREATE TABLE users (
 );
 
 CREATE TABLE event (
-    id integer primary key AUTOINCREMENT UNIQUE,
+    id integer primary key AUTOINCREMENT,
     usernameBooker STRING references users(username),
     usernameOrg STRING references users(username),
-    artists STRING references users(username),
     eventDate STRING,
     infos STRING
 );

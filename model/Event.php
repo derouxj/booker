@@ -22,11 +22,10 @@ class Event {
     private $id;
     private $usernameBooker;
     private $usernameOrg;
-    private $artists;
     private $eventDate;
     private $infos;
 
-    function __construct($i=null, $uB=null, $uO=null, $a=null, $e=null, $inf=null){
+    function __construct($i=null, $uB=null, $uO=null, $e=null, $inf=null){
         if($i){
             $this->id = $i;
         }
@@ -36,9 +35,6 @@ class Event {
         if($uO){
             $this->usernameOrg = $uO;
         }
-        if($a){
-            $this->artists = $a;
-        }
         if($e){
             $this->eventDate = $e;
         }
@@ -47,14 +43,14 @@ class Event {
         }
     }
     
+    function getId(){
+        return $this->id;
+    }
     function getUsernameBooker(){
         return $this->usernameBooker;
     }
     function getUsernameOrg(){
         return $this->usernameOrg;
-    }
-    function getArtists(){
-        return $this->artists;
     }
     function getEventDate(){
         return $this->eventDate;
