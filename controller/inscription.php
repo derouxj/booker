@@ -11,7 +11,11 @@ if (isset($_POST['valider'])) {
     if (isset($_POST['valider'])) {
         if (($_POST['id'])!='' && !$dao->getAllFromUserName($_POST['id'])) {
             $id = $_POST['id'];
-        } else {
+        } else if($dao->getAllFromUserName($_POST['id'])){
+            $correct=0;
+            $_POST['alreadyused'] = 1;
+        }
+        else {
             $s .= '\n   - Identifiant';
             $correct = 0;
         }
@@ -45,6 +49,7 @@ if (isset($_POST['valider'])) {
             $user = new Users($id, $dao->hashPassWord($password), $prenom, $nom, $email, $lieu, $type, $desc, 'Default');
             $dao->insertUser($user);
             unset($user);
+            header('Location: ../controller/accueil.php');
         }
     }
 }

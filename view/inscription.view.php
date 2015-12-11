@@ -52,7 +52,8 @@
                 <p> Les champs marqués d'un * sont obligatoires </p>
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Valider">
-            <?php } if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir le(s) champ(s) suivants : '.$_POST['fieldnotset'].'")</script>';}?>
+            <?php } if(isset($_POST['alreadyused'])){echo '<script>alert("Identifiant déjà utilisé")</script>'; }
+            else if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir le(s) champ(s) suivants : '.$_POST['fieldnotset'].'")</script>';}?>
         </form>
     </body>
 </html>

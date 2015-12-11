@@ -28,18 +28,13 @@ section {
     text-align:center;
     margin-left:65%;
 }
-/*
-a {
-    display: block;
-    background-image:linear-gradient(white, LightBlue);
-    text-decoration:none;
-}
 
-a:visited {
-    color : purple;
+.boxed{
+    border : solid black 1px;
+    text-align:center;
+    float : right;
+    background-color : white;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-
-a:hover {
-    background-image:linear-gradient(LightBlue, blue);
-    color : white;
-}*/
