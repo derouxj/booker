@@ -83,7 +83,7 @@
         <ul>
             <li>
                 <a href="../index.php">
-                    Acceuil
+                    Accueil
                 </a>
             </li><li>
                 <a href="../controller/artistes.php">
