@@ -33,11 +33,13 @@
                                 echo '<td><p>'.$monContact[6].'</p></td>';
                                 echo '<td><p>'.$monContact[7].'</p></td>';
                                 echo '<td><p>'.$monContact[8].'</p></td>';
-                                echo '<td><a href=\'PAGE_MODIF_AVEC_PRAM_GET\'><img src=\'../view/img/logo_modif.png\' height="30" width="30"/></a></td></tr>';
+                                echo '<td><a href=\''.'../controller/nouveauContactCarnet.php?idC='.$monContact[0].'\'><img src=\'../view/img/logo_modif.png\' height="30" width="30"/></a> 
+                                <a href=\''.'../controller/carnet.php?idC='.$monContact[0].'\'><img src=\'../view/img/logo_suppr.png\' height="30" width="30"/></a> </td></tr>';
                             }
                         }
                     ?>
                 </table>
+                <a href="../controller/nouveauContactCarnet.php">Ajouter un contact</a>
             </center>
         </section>
 </body>

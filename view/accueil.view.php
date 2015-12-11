@@ -12,11 +12,6 @@
         <?php include("menu.view.php"); ?>
         <section id="main">
             <?php if (isset($_COOKIE['username'])) { ?>
-            <div id="dem">
-                <a href='../controller/demande.php'>
-                    Organiser un événement
-                </a>
-            </div>
             <?php } ?>
             <div id="desc">Description de l'activité du site (WIP)</div>   
             <div id="contact">

@@ -6,7 +6,13 @@
  * and open the template in the editor.
  */
 include ("../model/DAO.class.php");
-$mesContacts=$dao->getCarnet("jejej");
+$mesContacts=$dao->getCarnet($_COOKIE['username']);
+
+if (isset($_GET['idC'])) {
+    $id=$_GET['idC'];
+    $dao->deleteCarnet($id);
+    header('Location: ../controller/carnet.php');
+}
 include ("../view/carnet.view.php");
 
 
