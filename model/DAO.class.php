@@ -30,7 +30,9 @@ class DAO {
             $in = $this->db->quote($user->getInfos());
             $pp = $this->db->quote($user->getProfilPic());
             $q = "INSERT INTO users VALUES ($name,$pw,$fn,$ln,$em,$pl,$ty,$in,$pp)";
+            var_dump($q);
             $r = $this->db->exec($q);
+            var_dump($r);
             if ($r == 0) {
                 die("createUser error: no user inserted\n");
             }
