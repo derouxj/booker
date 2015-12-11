@@ -43,9 +43,11 @@ class DAO {
         try {
             $unB = $this->db->quote($event->getUsernameBooker());
             $unO = $this->db->quote($event->getUsernameOrg());
+            $evtN = $this->db->quote($event->getEventName());
+            $evtP = $this->db->quote($event->getEventPlace());
             $evtD = $this->db->quote($event->getEventDate());
             $infos = $this->db->quote($event->getInfos());
-            $q = "INSERT INTO event(usernameBooker,usernameOrg,eventDate,infos) VALUES ($unB,$unO,$evtD,$infos)";
+            $q = "INSERT INTO event(usernameBooker,usernameOrg,eventName,eventPlace,eventDate,infos,ready) VALUES ($unB,$unO,$evtN,$evtP,$evtD,$infos,0)";
             $r = $this->db->exec($q);
             if ($r == 0) {
                 die("createEvent error: no event inserted\n");
@@ -105,6 +107,20 @@ class DAO {
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
         }
+    }
+    
+    function getEventsOfBooker($booker){
+        $booker=$this->db->quote($booker);
+        $req = ("SELECT * FROM event WHERE usernameBooker=$booker");
+        try {
+            $res1 = $this->db->query($req);
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'event');
+            return $result;
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+        
+        
     }
 
     function rightPassword($un, $pw) {

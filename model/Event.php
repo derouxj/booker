@@ -22,10 +22,13 @@ class Event {
     private $id;
     private $usernameBooker;
     private $usernameOrg;
+    private $eventName;
+    private $eventPlace;
     private $eventDate;
     private $infos;
+    private $ready;
 
-    function __construct($i=null, $uB=null, $uO=null, $e=null, $inf=null){
+    function __construct($i=null, $uB=null, $uO=null, $en=null, $ep=null, $ed=null, $inf=null, $r=null){
         if($i){
             $this->id = $i;
         }
@@ -35,12 +38,19 @@ class Event {
         if($uO){
             $this->usernameOrg = $uO;
         }
-        if($e){
-            $this->eventDate = $e;
+        if($en){
+            $this->eventName = $en;
+        }
+        if($ep){
+            $this->eventPlace = $ep;
+        }
+        if($ed){
+            $this->eventDate = $ed;
         }
         if($inf){
             $this->infos = $inf;
         }
+        $this->ready=0;
     }
     
     function getId(){
@@ -52,11 +62,20 @@ class Event {
     function getUsernameOrg(){
         return $this->usernameOrg;
     }
+    function getEventName(){
+        return $this->eventName;
+    }
+    function getEventPlace(){
+        return $this->eventPlace;
+    }
     function getEventDate(){
         return $this->eventDate;
     }
     function getInfos(){
         return $this->infos;
+    }
+    function isReady(){
+        return $this->ready;
     }
     
 }

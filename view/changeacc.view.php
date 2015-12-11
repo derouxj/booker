@@ -21,7 +21,7 @@
 
                 <ul><li class="main">Prénom :</li><li class="sec"><input type="text" name="firstname" value="<?php echo $data['user'][0]->getFirstname(); ?>"></li></ul>
 
-                <ul><li class="main">Email :</li><li class="sec"><input type="text" name="email" value="<?php echo $data['user'][0]->getEmail(); ?>"></li></ul>
+                <ul><li class="main">Email :</li><li class="sec"><input type="email" name="email" value="<?php echo $data['user'][0]->getEmail(); ?>"></li></ul>
 
                 <ul><li class="main">Ville :</li><li class="sec"><input type="text" name="place" value="<?php echo $data['user'][0]->getPlace(); ?>"></li></ul>
                 
