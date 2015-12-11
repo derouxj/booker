@@ -6,14 +6,14 @@ $bookers = $dao->getUsersFromUserType('b');
 $artists = $dao->getUsersFromUserType('a');
 if(isset($_POST['valider'])){
     
-    if(isset($_POST['booker']) && isset($_POST['name']) && isset($_POST['place']) && isset($_POST['date']) && isset($_POST['desc'])){
+    if($_POST['booker']!='' && $_POST['eventName']!='' && $_POST['place']!='' && $_POST['date']!='' && $_POST['desc']!=''){
         $booker = $_POST['booker'];
         $artists = $_POST['artists'];
-        $name = $_POST['name'];
+        $name = $_POST['eventName'];
         $place = $_POST['place'];
         $date = $_POST['date'];
         $descr = $_POST['desc'];
-        $event = new Event($booker, $name, $place, $date, $descr);
+        $event = new Event(0, $booker, $_COOKIE['username'], $name, $place, $date, $descr);
         $dao->insertEvent($event, $artists);
         unset($event);
         header("Location: ../controller/accueil.php");

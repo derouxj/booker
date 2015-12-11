@@ -19,10 +19,9 @@
                 <p><ul class="liste"><li class="main">Booker demandé : </li><li class="sec">
                         <SELECT name="booker" size="1">
                             <?php
-                            $i=1;
                             foreach($bookers as $b){
-                                echo '<OPTION value="'.$i.'">'.$b->getUsername();
-                                $i++;
+                                $n = $b->getUsername();
+                                echo "<OPTION value=$n>$n";
                             }
                             ?> 
                         </SELECT></li></ul>
@@ -36,7 +35,7 @@
                             ?> 
                         </SELECT></li></ul>
                 </p>
-                <p><ul><li class="main">Nom de l'événement :</li><li class="sec"><input type="text" name="name"></li></ul>
+                <p><ul><li class="main">Nom de l'événement :</li><li class="sec"><input type="text" name="eventName"></li></ul>
                 </p>
                 <p><ul><li class="main">Lieu de déroulement de l'événement :</li><li class="sec"><input type="text" name="place"></li></ul>
                 </p>

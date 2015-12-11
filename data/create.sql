@@ -14,8 +14,11 @@ CREATE TABLE event (
     id integer primary key AUTOINCREMENT,
     usernameBooker STRING references users(username),
     usernameOrg STRING references users(username),
-    eventDate STRING,
-    infos STRING
+    eventName STRING,
+    eventPlace STRING,
+    eventDate DATE,
+    infos STRING,
+    ready integer
 );
 
 CREATE TABLE eventsOfUser(

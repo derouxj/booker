@@ -11,7 +11,11 @@ if (isset($_POST['valider'])) {
     if (isset($_POST['valider'])) {
         if (($_POST['id'])!='' && !$dao->getAllFromUserName($_POST['id'])) {
             $id = $_POST['id'];
-        } else {
+        } else if($dao->getAllFromUserName($_POST['id'])){
+            $correct=0;
+            $_POST['alreadyused'] = 1;
+        }
+        else {
             $s .= '\n   - Identifiant';
             $correct = 0;
         }
