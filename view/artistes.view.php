@@ -13,6 +13,7 @@
         if(isset($data['artistes'])){
             foreach ($data['artistes'] as $value) { 
                 echo $value->getFirstName();
+                echo '</br><img src='.$value->getProfilPic().' height="200" width="200">';
                 echo '</br>';
             }
         }
