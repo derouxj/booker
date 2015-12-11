@@ -43,6 +43,20 @@
             </li>
             <?php } ?>
         </ul>
+        <?php if(isset($_COOKIE['username'])) { ?>
+        <ul>
+        <li>
+            <a href='../controller/demande.php'>
+                Organiser un événement
+            </a>
+        </li>
+        <li>
+            <a href='../controller/carnet.php'>
+                Carnet d'adresse
+            </a>
+        </li>
+        </ul>
+        <?php } ?>
     </nav>
 </div>
 </html>
