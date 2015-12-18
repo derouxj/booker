@@ -284,4 +284,19 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }       
     }
+    
+    function sendMessage($sender, $receiver, $message){
+        $sender= $this->db->quote($sender);
+        $receiver= $this->db->quote($receiver);
+        $message = $this->db->quote($message);
+        $date = time('d-h-m-s');
+        $req="INSERT INTO messagerie VALUES ($sender, $receiver, $message, $date)";
+        try {
+            $res1 = $this->db->exec($req);
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }   
+        
+        
+    }
 }
