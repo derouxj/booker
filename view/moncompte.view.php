@@ -20,9 +20,11 @@
                 <p>Infos : <?php echo $data['user'][0]->getInfos(); ?></p>
                 <p>Image profil : <img src='<?php echo $data['user'][0]->getProfilPic(); ?>' alt='image' height="200" width="200"></p>
                 <div class="boxed">
-                    <?php foreach($data['event'] as $e){
-                        echo $e->getEventName().'<br>'; 
-                    }?>
+                    <?php foreach($data['event'] as $e){ ?>
+                    <a href="../controller/unevent.php?id=<?php echo $e->getId() ?>">
+                        <p> <?php echo $e->getEventName(); ?> </p>
+                    </a>
+                    <?php }?>
                 </div> 
                 <div id="dem"><a href="../controller/changeacc.php">Modifier</a></div>
             <?php } else {
