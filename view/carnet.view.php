@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
+        <?php $active = "carnet"; include('menu.view.php'); ?>
         <section id="main">
             <center><p> ICI VOTRE CARNET </p>
                 <table>
@@ -40,6 +40,8 @@
                     ?>
                 </table>
                 <a href="../controller/nouveauContactCarnet.php">Ajouter un contact</a>
+                <a href="../controller/importerContact.php">Importer un contact</a>
+                
             </center>
         </section>
 </body>

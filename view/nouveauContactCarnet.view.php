@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
+        <?php $active="carnet";include('menu.view.php'); ?>
         <section id="main">
             <center><p> AJOUT D'UN CONTACT AU CARNET </p>
                 
@@ -23,13 +23,12 @@
                 <?php if (isset($_GET['idC'])) {
                     $info=$_GET['idC'];
                     $infoDuContact=$dao->getContactCarnet($info)[0];
-                    var_dump($infoDuContact);
                 } else {
                     $infoDuContact= array("newCle","leProp","","","","","","","");
                 } ?>
                 <ul><li class="main">Nom :</li><li class="sec"><input type="text" name="lastname" value="<?php echo $infoDuContact[3]; ?>" autofocus></li></ul>
                 <ul><li class="main">Prénom :</li><li class="sec"><input type="text" name="firstname" value="<?php echo $infoDuContact[2]; ?>"></li></ul>
-                <ul><li class="main">Email :</li><li class="sec"><input type="text" name="email" value="<?php echo $infoDuContact[4]; ?>"></li></ul>
+                <ul><li class="main">Email :</li><li class="sec"><input type="email" name="email" value="<?php echo $infoDuContact[4]; ?>"></li></ul>
                 <ul><li class="main">Ville :</li><li class="sec"><input type="text" name="place" value="<?php echo $infoDuContact[5]; ?>"></li></ul>
                 <ul><li class="main">Metier :</li><li class="sec"><input type="text" name="job" value="<?php echo $infoDuContact[6]; ?>"></li></ul>
                 <ul><li class="main">Téléphone :</li><li class="sec"><input type="text" name="phone" value="<?php echo $infoDuContact[7]; ?>"></li></ul>

@@ -9,6 +9,7 @@ if($dao->getAllFromUserName($_GET['art'])) {
     $artiste = $dao->getAllFromUserName($_GET['art'])[0];
 }
 
+
 include("../view/unartiste.view.php");
 
 ?>

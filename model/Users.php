@@ -22,8 +22,10 @@ class Users {
     private $usertype;
     private $infos;
     private $profilpic;
+    private $anecdote;
+    private $video;
 
-    function __construct($u = null, $pa = null, $f = null, $l = null, $e = null, $pl = null, $t = null, $i = null, $pr = null) {
+    function __construct($u = null, $pa = null, $f = null, $l = null, $e = null, $pl = null, $t = null, $i = null, $pr = null, $an = null, $vid=null) {
         if ($u) {
             $this->username = $u;
         }
@@ -50,6 +52,12 @@ class Users {
         }
         if ($pr) {
             $this->profilpic = $pr;
+        }
+        if ($an) {
+            $this->anecdote = $an;
+        }
+        if ($vid) {
+            $this->video = $vid;
         }
     }
 
@@ -90,6 +98,14 @@ class Users {
     function getProfilPic() {
         return $this->profilpic;
     }
+    
+    function getAnecdote() {
+        return $this->anecdote;
+    }
+    
+    function getVideo() {
+        return $this->video;
+    }
 
 #######################  setters  #######################
 
@@ -127,6 +143,61 @@ class Users {
 
     function setProfilPic($i) {
         $this->profilpic = $i;
+    }
+    
+    function setAnecdote($an) {
+        $this->anecdote = $an;
+    }
+    
+    function setViceo($vid) {
+        $this->video=$vid;
+    }
+
+}
+class InfoArtistes {
+
+    private $username;
+    private $anecdote;
+    private $video;
+
+    function __construct($u = null,$an = null, $vid=null) {
+        if ($u) {
+            $this->username = $u;
+        }
+        if ($an) {
+            $this->anecdote = $an;
+        }
+        if ($vid) {
+            $this->video = $vid;
+        }
+    }
+
+#######################  getters  #######################
+
+    function getUsername() {
+        return $this->username;
+    }
+
+    function getAnecdote() {
+        return $this->anecdote;
+    }
+    
+    function getVideo() {
+        return $this->video;
+    }
+
+#######################  setters  #######################
+
+    function setUsername($i) {
+        $this->username = $i;
+    }
+
+    function setAnecdote($an) {
+        $this->anecdote = $an;
+    }
+    
+    function setViceo($vid) {
+        $this->video=$vid;
     }
 
 }

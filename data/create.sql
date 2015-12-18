@@ -38,3 +38,11 @@ CREATE TABLE contacts(
     phone STRING,
     other STRING
 );
+
+CREATE TABLE messages(
+    sender STRING references users(username),
+    receiver STRING references users(username),
+    title STRING,
+    message STRING,
+    dateMessage STRING
+);
