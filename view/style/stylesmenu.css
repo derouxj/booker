@@ -25,6 +25,11 @@
         line-height: 0;
         height: 0;
     }
+
+    #space {
+        margin-top: 80px;
+    }
+
     #cssmenu {
         position : fixed; top : 0;
         margin-bottom: 50px;
