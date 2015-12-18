@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include("menu.view.php"); ?>
+        <?php $active = "accueil"; include("menu.view.php"); ?>
         <section id="main">
             <?php if (isset($_COOKIE['username'])) { ?>
             <?php } ?>

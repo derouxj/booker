@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
+        <?php $active='connexion';include('menu.view.php'); ?>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php if (!isset($_COOKIE['username'])) { ?>
             <fieldset>
