@@ -262,4 +262,28 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
+    
+    function getUsers() {
+        $req="SELECT username FROM users";
+        //var_dump($req);
+        try {
+            $res1 = $this->db->query($req);
+            $result = $res1->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
+    
+    function getUserFromUsername($username) {
+        $req="SELECT * FROM users where username=\"$username\"";
+        //var_dump($req);
+        try {
+            $res1 = $this->db->query($req);
+            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+            return $result[0];
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
 }

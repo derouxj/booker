@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
+        <?php $active = "";include('menu.view.php'); ?>
         <section id="main">
             <center><p> Envoyez nous un pigeon voyageur avec votre requête :) (WIP)</p></center>
         </section>
