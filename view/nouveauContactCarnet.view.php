@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
+        <?php $active="carnet";include('menu.view.php'); ?>
         <section id="main">
             <center><p> AJOUT D'UN CONTACT AU CARNET </p>
                 

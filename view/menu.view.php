@@ -1,11 +1,12 @@
 <?php
-       $accueil='';$artistes='';$compte='';$event='';$inscription='';$connexion='';
+       $accueil='';$artistes='';$compte='';$event='';$inscription='';$connexion='';$carnet='';
        if($active=="accueil"){$accueil="active";}
        if($active=="artistes"){$artistes="active";}
        if($active=="compte"){$compte="active";}
        if($active=="event"){$event="active";}
        if($active=="inscription"){$inscription="active";}
        if($active=="connexion"){$connexion="active";}
+       if($active=="carnet"){$carnet="active";}
 
 ?>
 
@@ -54,7 +55,7 @@
                             </a>
                         </li><li>
                         
-                    </li><li>
+                    </li><li class='<?php echo $carnet?>'>
                             <a href='../controller/carnet.php'>
                                 Carnet d'adresse
                             </a>
