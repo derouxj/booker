@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php');
+        <?php $active = "artistes";include('menu.view.php');
         if(isset($data['artistes'])){
             foreach ($data['artistes'] as $value) { 
                 echo $value->getFirstName();
