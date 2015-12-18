@@ -31,7 +31,9 @@ class DAO {
             $in = $this->db->quote($user->getInfos());
             $pp = $this->db->quote($user->getProfilPic());
             $q = "INSERT INTO users VALUES ($name,$pw,$fn,$ln,$em,$pl,$ty,$in,$pp)";
+            var_dump($q);
             $r = $this->db->exec($q);
+            var_dump($r);
             if ($r == 0) {
                 die("createUser error: no user inserted\n");
             }
@@ -76,6 +78,22 @@ class DAO {
                 return false;
             } else {
                 $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+                return $result;
+            }
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
+    
+        function getAllFromInfoArtiste($username) {
+        $username = $this->db->quote($username);
+        $req = "SELECT * FROM infoartistes WHERE username=$username";
+        try {
+            $res1 = $this->db->query($req);
+            if (!$res1) {
+                return false;
+            } else {
+                $result = $res1->fetchAll(PDO::FETCH_CLASS, 'infoartistes');
                 return $result;
             }
         } catch (PDOException $e) {
@@ -165,8 +183,24 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
-
-    function updatePassword($un, $pw) {
+    
+        function updateinfoartiste($un,$an,$vid) {
+        $un = $this->db->quote($un);
+        $an = $this->db->quote($an);
+        $vid = $this->db->quote($vid);
+        $req = "UPDATE infoartistes SET anecdote=$an, video=$vid WHERE username=$un";
+        try {
+            $r = $this->db->exec($req);
+            if ($r == 0) {
+                die("updateUser error: no user updated\n");
+            }
+        } catch (PDOException $e) {
+            die("PDO Error :" . $e->getMessage());
+        }
+    }
+    
+    
+    function updatePassword($un,$pw) {
         $pw = $this->db->quote($this->hashPassWord($pw));
         $un = $this->db->quote($un);
         $req = "UPDATE users SET password=$pw WHERE username=$un";

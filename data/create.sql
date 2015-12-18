@@ -10,6 +10,12 @@ CREATE TABLE users (
     profilpic STRING
 );
 
+CREATE TABLE infoartistes (
+    username STRING primary key,
+    anecdote STRING,
+    video STRING
+);
+
 CREATE TABLE event (
     id integer primary key AUTOINCREMENT,
     usernameBooker STRING references users(username),
