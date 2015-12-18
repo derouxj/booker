@@ -35,7 +35,7 @@
             <p class="titles">Messagerie</p>    
                 <?php
                 foreach($data['msg'] as $m){
-                        echo '<h3>'.$m['title'].'</h3><p> sent at </p><h3>'.$m['dateMessage'].'</h3><p> by </p><h3>'.$m['sender'].'<h3><br>'; 
+                        echo '<h3>'.$m->getTitle().'</h3><p> sent at </p><h3>'.$m->getDate().'</h3><p> by </p><h3>'.$m->getSender().'<h3><br>'; 
                     }?>                
             </div>
                 
