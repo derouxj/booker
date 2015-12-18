@@ -5,8 +5,10 @@ include_once("../model/DAO.class.php");
 
 $dao = new DAO();
 
-if($dao->getEventFromId($_GET['id'])) {
-    $_POST['event'] = $dao->getEventFromId($_GET['id'])[0];
+$truc = $dao->getEventFromId($_GET['id']);
+
+if($truc) {
+    $_POST['event'] = $truc[0];
     $_POST['lel'] = $dao->getAllFromUserName($_POST['event']->getUsernameOrg())[0];
     $_POST['artistes'] = $dao->getUsersFromEventId($_GET['id']);
 

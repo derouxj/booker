@@ -330,5 +330,38 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
+    
+    function getEventFromId($id) {
+        $id = $this->db->quote($id);
+        $req = "SELECT * FROM event WHERE id=$id";
+        try {
+            $res1 = $this->db->query($req);
+            if (!$res1) {
+                return false;
+            } else {
+                $result = $res1->fetchAll(PDO::FETCH_CLASS, 'event');
+                return $result;
+            }
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
+    
+    function getUsersFromEventId($id) {
+        $id = $this->db->quote($id);
+        $req = "SELECT u.username,u.password,u.firstname,u.lastname,u.email,u.place"
+                . ",u.usertype,u.infos,u.profilpic FROM users u, eventsOfUser e WHERE e.id=$id and e.username=u.username";
+        try {
+            $res1 = $this->db->query($req);
+            if (!$res1) {
+                return false;
+            } else {
+                $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+                return $result;
+            }
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
 
 }

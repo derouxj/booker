@@ -7,7 +7,7 @@ INSERT INTO users VALUES ("Artiste2","1bc230f214bd2069b2918e06debab8cc346d6651",
 INSERT INTO users VALUES ("Organisateur1","1bc230f214bd2069b2918e06debab8cc346d6651","Organisateur1","Organisateur1","Organisateur1@test.fr","Organisateur1","o","Organisateur1","https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/dude3.png");
 INSERT INTO users VALUES ("Organisateur2","1bc230f214bd2069b2918e06debab8cc346d6651","Organisateur2","Organisateur2","Organisateur2@test.fr","Organisateur2","o","Organisateur2","https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/dude3.png");
 
-INSERT INTO event(id, usernameBooker, usernameOrg, eventName, eventPlace, eventDate, infos, ready) VALUES (1, "Booker1", "Organisateur", "Nom", "Place", "Date", "Infos", 0);
+INSERT INTO event(id, usernameBooker, usernameOrg, eventName, eventPlace, eventDate, infos, ready) VALUES (1, "Booker1", "Organisateur1", "Nom", "Place", "Date", "Infos", 0);
 INSERT INTO event(id, usernameBooker, usernameOrg, eventName, eventPlace, eventDate, infos, ready) VALUES (2, "Booker2", "Organisateur2", "Nom2", "Place2", "Date2", "Infos2", 0);
 
 INSERT INTO eventsOfUser VALUES ("Booker1", 1);

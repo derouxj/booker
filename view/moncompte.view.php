@@ -27,7 +27,9 @@
             <p class="titles">Mes événements</p>
                 <p class="boxed">
                     <?php foreach($data['event'] as $e){
+                        echo '<a href="../controller/unevent.php?id=' . $e->getId() . '">';
                         echo $e->getEventName().'<br>'; 
+                        echo '</a>';
                     }?>
                 </p>
             </div>
