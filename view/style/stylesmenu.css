@@ -27,7 +27,8 @@
     }
     #cssmenu {
         position : fixed; top : 0;
-        width: auto;
+        margin-bottom: 50px;
+        width: 100%;
         border-bottom: 3px solid #47c9af;
         font-family: Raleway, sans-serif;
         line-height: 1;
