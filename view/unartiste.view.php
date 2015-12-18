@@ -10,6 +10,7 @@
     </head>
     <body>
         <?php
+        $active = "artistes";
         include('menu.view.php');
         if ($artiste) { ?>
         <section id="art">
