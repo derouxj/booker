@@ -33,13 +33,15 @@
 
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Sauvegarder modifications">
-            <?php if (isset($_POST['valider'])) { 
+            <?php if (isset($_POST['valider']) && $correct == 1) { 
                 echo '<center><p>Modifications effectuées</p></center>';
                 }
             ?>
             <?php } else {
             echo '<center><p>Vous devez être connecté pour acceder à cette page</p></center>';
             } ?>
+            <?php if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir le(s) champ(s) suivants : '.$_POST['fieldnotset'].'")</script>';}?>
+
         </form>
     </body>
 </html>
