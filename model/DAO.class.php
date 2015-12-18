@@ -30,7 +30,9 @@ class DAO {
             $in = $this->db->quote($user->getInfos());
             $pp = $this->db->quote($user->getProfilPic());
             $q = "INSERT INTO users VALUES ($name,$pw,$fn,$ln,$em,$pl,$ty,$in,$pp)";
+            var_dump($q);
             $r = $this->db->exec($q);
+            var_dump($r);
             if ($r == 0) {
                 die("createUser error: no user inserted\n");
             }
@@ -75,6 +77,22 @@ class DAO {
                 return false;
             } else {
                 $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
+                return $result;
+            }
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
+    
+        function getAllFromInfoArtiste($username) {
+        $username = $this->db->quote($username);
+        $req = "SELECT * FROM infoartistes WHERE username=$username";
+        try {
+            $res1 = $this->db->query($req);
+            if (!$res1) {
+                return false;
+            } else {
+                $result = $res1->fetchAll(PDO::FETCH_CLASS, 'infoartistes');
                 return $result;
             }
         } catch (PDOException $e) {
@@ -166,6 +184,22 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
+    
+        function updateinfoartiste($un,$an,$vid) {
+        $un = $this->db->quote($un);
+        $an = $this->db->quote($an);
+        $vid = $this->db->quote($vid);
+        $req = "UPDATE infoartistes SET anecdote=$an, video=$vid WHERE username=$un";
+        try {
+            $r = $this->db->exec($req);
+            if ($r == 0) {
+                die("updateUser error: no user updated\n");
+            }
+        } catch (PDOException $e) {
+            die("PDO Error :" . $e->getMessage());
+        }
+    }
+    
     
     function updatePassword($un,$pw) {
         $pw = $this->db->quote($this->hashPassWord($pw));
@@ -273,15 +307,30 @@ class DAO {
         }
     }
     
-    function getUserFromUsername($username) {
-        $req="SELECT * FROM users where username=\"$username\"";
-        //var_dump($req);
+    function getMessage($username){
+        $username = $this->db->quote($username);
+        $req="SELECT * FROM messagerie WHERE receiver=$username";
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
-            return $result[0];
+            $result = $res1->fetchAll();
+            return $result;
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
-        }
+        }       
+    }
+    
+    function sendMessage($sender, $receiver, $message){
+        $sender= $this->db->quote($sender);
+        $receiver= $this->db->quote($receiver);
+        $message = $this->db->quote($message);
+        $date = time('d-h-m-s');
+        $req="INSERT INTO messagerie VALUES ($sender, $receiver, $message, $date)";
+        try {
+            $res1 = $this->db->exec($req);
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }   
+        
+        
     }
 }

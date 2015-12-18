@@ -6,6 +6,7 @@ $s = "";
 $correct = 1;
 if (isset($_COOKIE['username'])) {
   $data['user'] = $dao->getAllFromUserName($_COOKIE['username']);
+  $data['infoartistes'] = $dao->getAllFromInfoArtiste($_COOKIE['username']);
 }
 if (isset($_POST['valider'])) {
     if(!$_POST['firstname'] != '') {
@@ -22,6 +23,7 @@ if (isset($_POST['valider'])) {
     }
     if($correct) {
         $dao->updateUser($_COOKIE['username'],$_POST['firstname'],$_POST['lastname'],$_POST['email'],$_POST['place'],$_POST['infos'],$_POST['pic']);
+        $dao->updateinfoartiste($_COOKIE['username'] ,$_POST['infos2'], $_POST['video']);
         header('Location: ../controller/changeacc.php?modif=true');
     }
     if ($s != "") {$_POST['fieldnotset'] = $s;}
