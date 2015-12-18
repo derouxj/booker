@@ -1,0 +1,44 @@
+body {
+    margin : 0px;
+    background-image: url(http://cvincent61.free.fr/fond/fond-site.jpg);
+}
+
+section:not(#art) > .name > a {
+    color: #ffffff;
+    background-color: #3ab4a6;
+    padding : 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom : 15%;
+    margin-left : auto;
+    margin-right : auto;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+section:not(#art) {
+    display: inline-block;
+    text-align : center;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#art {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#art>p {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top : 0.2em;
+    padding-bottom : 0.2em;
+    padding-left : 0.8em;
+    padding-right : 0.8em;
+    color: #ffffff;
+    background-color: #3ab4a6;
+    border-radius: 8px;
+    width: 15em;
+    font-weight: bold;
+}

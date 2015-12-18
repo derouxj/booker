@@ -16,19 +16,6 @@ section {
     padding:20%;
 }
 
-#dem {
-    border : solid black 1px;
-    text-align: center;
-    margin-right:65%;
-}
-
-#contact{
-    margin-top:2.5%;
-    border : solid black 1px;
-    text-align:center;
-    margin-left:65%;
-}
-
 .boxed{
     border : solid black 1px;
     text-align:center;

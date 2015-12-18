@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
+        <?php $active = "compte";include('menu.view.php'); ?>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php if (isset($_COOKIE['username'])) { ?>
             <fieldset>
@@ -33,13 +33,15 @@
 
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Sauvegarder modifications">
-            <?php if (isset($_POST['valider'])) { 
+            <?php if (isset($_POST['valider']) && $correct == 1) { 
                 echo '<center><p>Modifications effectuées</p></center>';
                 }
             ?>
             <?php } else {
             echo '<center><p>Vous devez être connecté pour acceder à cette page</p></center>';
             } ?>
+            <?php if(isset($_POST['fieldnotset'])){echo '<script>alert("Veuillez remplir le(s) champ(s) suivants : '.$_POST['fieldnotset'].'")</script>';}?>
+
         </form>
     </body>
 </html>

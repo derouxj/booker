@@ -9,13 +9,15 @@
         </title>
     </head>
     <body>
-        <?php include("menu.view.php"); ?>
+        <?php $active = "accueil"; include("menu.view.php"); ?>
         <section id="main">
             <?php if (isset($_COOKIE['username'])) { ?>
             <?php } ?>
             <div id="desc">Description de l'activité du site (WIP)</div>   
             <div id="contact">
-                <a href='../controller/contact.php'>Nous contacter</a>
+                <a href='../controller/contact.php'>
+                    Nous contacter
+                </a>
             </div>
         </section>
     </body>
