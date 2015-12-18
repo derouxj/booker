@@ -1,48 +1,11 @@
-INSERT INTO users VALUES ("jejej","test","jeremy","carre","jeje@test.fr","maville","booker","les infos","img.png");
-INSERT INTO contacts VALUES (2,"jejej","le prenom","le nom","l'email@test.fr","la-ville","son metiers","0642350091","il a plein d'info super utile qu'il ne faut pas oublier meme si s'est tres long voir trop long il faudra que ca soit beau et bien placé");
-INSERT INTO contacts VALUES (3,"jejej","le prenom","le nom","l'email@test.fr","la-ville","le metiers","0"+"000642350091","il a plein d'info super utile qu'il ne faut pas oublier meme si s'est tres long voir trop long il faudra que ca soit beau et bien placé");
+INSERT INTO users VALUES ("Booker1","1bc230f214bd2069b2918e06debab8cc346d6651","Booker1","Booker1","Booker1@test.fr","Booker1","Booker1","Booker1","Booker1");
+INSERT INTO users VALUES ("Booker2","1bc230f214bd2069b2918e06debab8cc346d6651","Booker2","Booker2","Booker2@test.fr","Booker2","Booker2","Booker2","Booker2");
 
+INSERT INTO users VALUES ("Artiste1","1bc230f214bd2069b2918e06debab8cc346d6651","Artiste1","Artiste1","Artiste1@test.fr","Artiste1","Artiste1","Artiste1","Artiste1");
+INSERT INTO users VALUES ("Artiste2","1bc230f214bd2069b2918e06debab8cc346d6651","Artiste2","Artiste2","Artiste2@test.fr","Artiste2","Artiste2","Artiste2","Artiste2");
 
+INSERT INTO event(id, usernameBooker, usernameOrg, eventName, eventPlace, eventDate, infos, ready) VALUES (1, "Booker1", "Organisateur", "Nom", "Place", "Date", "Infos", 0);
+INSERT INTO event(id, usernameBooker, usernameOrg, eventName, eventPlace, eventDate, infos, ready) VALUES (2, "Booker2", "Organisateur2", "Nom2", "Place2", "Date2", "Infos2", 0);
 
-
-
-
-/*
-CREATE TABLE users (
-    username STRING primary key,
-    password STRING,
-    firstname STRING,
-    lastname STRING,
-    email STRING,
-    place STRING,
-    usertype STRING,
-    infos STRING,
-    profilpic STRING
-);
-
-CREATE TABLE event (
-    id integer primary key AUTOINCREMENT,
-    usernameBooker STRING references users(username),
-    usernameOrg STRING references users(username),
-    artists STRING references users(username),
-    eventDate STRING,
-    infos STRING
-);
-
-CREATE TABLE eventsOfUser(
-    username STRING references users(username),
-    id integer references event(id),
-    primary key(username, id)
-);
-
-CREATE TABLE contacts(
-    idC integer primary key AUTOINCREMENT,
-    usernameProp STRING references users(username),
-    firstname STRING,
-    lastname STRING,
-    email STRING,
-    town STRING,
-    job STRING,
-    phone integer,
-    other STRING
-);*/
+INSERT INTO eventsOfUser VALUES ("Booker1", 1);
+INSERT INTO eventsOfUser VALUES ("Booker1", 2);
