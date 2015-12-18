@@ -273,15 +273,15 @@ class DAO {
         }
     }
     
-    function getUserFromUsername($username) {
-        $req="SELECT * FROM users where username=\"$username\"";
-        //var_dump($req);
+    function getMessage($username){
+        $username = $this->db->quote($username);
+        $req="SELECT * FROM messagerie WHERE receiver=$username";
         try {
             $res1 = $this->db->query($req);
-            $result = $res1->fetchAll(PDO::FETCH_CLASS, 'users');
-            return $result[0];
+            $result = $res1->fetchAll();
+            return $result;
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
-        }
+        }       
     }
 }
