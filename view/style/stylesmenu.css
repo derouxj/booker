@@ -26,10 +26,12 @@
         height: 0;
     }
     #cssmenu {
+        position : fixed; top : 0;
         width: auto;
         border-bottom: 3px solid #47c9af;
         font-family: Raleway, sans-serif;
         line-height: 1;
+        z-index: 3;
     }
     #cssmenu ul {
         background: #ffffff;
