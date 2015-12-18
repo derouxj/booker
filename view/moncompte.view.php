@@ -9,7 +9,7 @@
         </title>
     </head>
     <body>
-        <?php include('menu.view.php'); ?>
+        <?php $active = "compte";include('menu.view.php'); ?>
         <section id="main">
             <?php if (isset($_COOKIE['username'])) { ?>
                 <p>Identifiant : <?php echo $data['user'][0]->getUsername(); ?></p>

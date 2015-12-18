@@ -8,15 +8,17 @@
             Page d'accueil
         </title>
     </head>
-
-        <?php include("menu.view.php"); ?>
+    <body>
+        <?php $active = "accueil"; include("menu.view.php"); ?>
         <section id="main">
                 <body>
             <?php if (isset($_COOKIE['username'])) { ?>
             <?php } ?>
             <div id="desc">Description de l'activité du site (WIP)</div>   
             <div id="contact">
-                <a href='../controller/contact.php'>Nous contacter</a>
+                <a href='../controller/contact.php'>
+                    Nous contacter
+                </a>
             </div>
         </section>
     </body>

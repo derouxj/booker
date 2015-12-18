@@ -4,21 +4,25 @@ body {
 }
 
 form {
+    margin-top: 1em;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 
 .main{
-    background-image:linear-gradient(white, LightBlue);
+    background-color : #3ab4a6;
+    color: #ffffff;
+    font-weight: bold;
     margin-left: 5%;
     display: inline-block;
-    border: solid 1px black;
-    border-radius: 5px;
-    width: 30%;
+    border-radius: 8px;
+    width: 27%;
     padding-top: 1%;
     padding-bottom: 1%;
     text-align: center;
+    padding-left : 0.25em;
+    padding-right : 0.25em;
 }
 
 .sec{
@@ -60,12 +64,12 @@ fieldset>ul{
 }
 
 fieldset {
-    border: solid 1px gray;
+    border: solid 1px #3ab4a6;
     border-radius: 5px;
 }
 
 input#valider {
-    background-image:linear-gradient(white, LightBlue);
+    background-image:linear-gradient(lightcyan, #3ab4a6);
     margin-top: 1%;
     width: 50%;
     padding-top: 1%;
@@ -77,6 +81,6 @@ input#valider {
 }
 
 input#valider:hover {
-    background-image:linear-gradient(LightBlue, blue);
+    background-image:linear-gradient(#3ab4a6, #3ab4a6);
     color:white;
 }
