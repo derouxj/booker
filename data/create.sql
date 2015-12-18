@@ -39,9 +39,10 @@ CREATE TABLE contacts(
     other STRING
 );
 
-CREATE TABLE messagerie(
+CREATE TABLE messages(
     sender STRING references users(username),
     receiver STRING references users(username),
+    title STRING,
     message STRING,
     dateMessage STRING
 );

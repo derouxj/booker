@@ -273,7 +273,7 @@ class DAO {
         }
     }
     
-    function getMessage($username){
+    function getMessages($username){
         $username = $this->db->quote($username);
         $req="SELECT * FROM messagerie WHERE receiver=$username";
         try {

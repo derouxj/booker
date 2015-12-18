@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18 déc. 2015, 15:26:04
+    Author     : dyonj
+*/
+
+body {
+    margin : 0px;
+    background-image: url(http://cvincent61.free.fr/fond/fond-site.jpg);
+}
+
+
+p.titles {
+    text-align: center;
+    width: 33%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12%;
+    padding-right: 12%;
+    color: #ffffff;
+    background-color: #3ab4a6;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.boxed{
+    text-align: center;
+    width: 33%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8%;
+    padding-right: 8%;
+    color:#6A5CC6;
+    background-color: lavender;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#dem {
+    text-align: center;
+    background-image:linear-gradient(lightcyan, #3ab4a6);
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 8%;
+    padding-right: 8%;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+a, a.visited {
+    color: #444444;
+    text-decoration: none;
+}
+
+#dem:hover {
+    background-image:linear-gradient(#3ab4a6, #3ab4a6);
+    color:white;
+}
+
+section > div{
+    width:33%;
+    text-align: center;
+    float:left;
+    
+}
+
+h3{
+    display:inline;
+    font-size: 17px;
+}
+
+p{
+    font-size: 18px;
+    color:#6A5CC6;
+}
+h3 + p {
+    font-size: 16px;
+    display:inline;
+}
