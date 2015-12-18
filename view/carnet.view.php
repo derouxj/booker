@@ -40,6 +40,8 @@
                     ?>
                 </table>
                 <a href="../controller/nouveauContactCarnet.php">Ajouter un contact</a>
+                <a href="../controller/importerContact.php">Importer un contact</a>
+                
             </center>
         </section>
 </body>

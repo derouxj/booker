@@ -43,6 +43,11 @@
                             </a>
                         </li><li>
                         
+                    </li><li>
+                            <a href='../controller/carnet.php'>
+                                Carnet d'adresse
+                            </a>
+                        </li><li>
                         <a href="../controller/deconnexion.php">
                             Deconnexion
                             </a>
