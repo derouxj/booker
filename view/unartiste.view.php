@@ -30,6 +30,15 @@
                 Infos : 
             <?php echo $artiste->getInfos(); ?>
             </p>
+            <p>
+                Vidéo :
+                <iframe width="420" height="315" src='<?php echo $artiste2->getVideo(); ?>'></iframe> 
+                //https://www.youtube.com/embed/gEPmA3USJdI
+            </p>
+            <p>
+                A savoir:
+                <?php echo $artiste2->getAnecdote(); ?>
+            </p>
         </section>
         <?php
         } else {

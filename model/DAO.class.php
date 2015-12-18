@@ -83,6 +83,22 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
+    
+        function getAllFromInfoArtiste($username) {
+        $username = $this->db->quote($username);
+        $req = "SELECT * FROM infoartistes WHERE username=$username";
+        try {
+            $res1 = $this->db->query($req);
+            if (!$res1) {
+                return false;
+            } else {
+                $result = $res1->fetchAll(PDO::FETCH_CLASS, 'infoartistes');
+                return $result;
+            }
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
 
     function getUsersFromUserType($type) {
         $type = $this->db->quote($type);
@@ -168,6 +184,22 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
+    
+        function updateinfoartiste($un,$an,$vid) {
+        $un = $this->db->quote($un);
+        $an = $this->db->quote($an);
+        $vid = $this->db->quote($vid);
+        $req = "UPDATE infoartistes SET anecdote=$an, video=$vid WHERE username=$un";
+        try {
+            $r = $this->db->exec($req);
+            if ($r == 0) {
+                die("updateUser error: no user updated\n");
+            }
+        } catch (PDOException $e) {
+            die("PDO Error :" . $e->getMessage());
+        }
+    }
+    
     
     function updatePassword($un,$pw) {
         $pw = $this->db->quote($this->hashPassWord($pw));

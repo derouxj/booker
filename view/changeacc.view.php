@@ -31,6 +31,12 @@
 
                 <ul><li class="main">URL image :</li><li class="sec"><input type="text" name="pic" value="<?php echo $data['user'][0]->getProfilPic(); ?>"></li></ul>
 
+                <ul class=area><li class="main">anecdote :</li><li class="sec"><textarea name="infos2" rows="3"><?php echo $data['infoartistes'][0]->getAnecdote(); ?></textarea></li></ul>
+
+                
+                <ul><li class="main">URL vidéo :</li><li class="sec"><input type="text" name="video" value="<?php echo $data['infoartistes'][0]->getVideo(); ?>"></li></ul>
+
+
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Sauvegarder modifications">
             <?php if (isset($_POST['valider']) && $correct == 1) { 
