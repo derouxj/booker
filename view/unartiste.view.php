@@ -12,12 +12,13 @@
         <?php
         $active = "artistes";
         include('menu.view.php');
-        if ($artiste) { ?>
+        if (isset($artiste)) { ?>
         <section id="art">
             <img src='<?php echo $artiste->getProfilPic(); ?>' height="200" width="200">
             <p>
             <?php echo $artiste->getLastname(); ?>
             <?php echo $artiste->getFirstName(); ?>
+            </p>
             <p>
                 Email : 
             <?php echo $artiste->getEmail(); ?>
