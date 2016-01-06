@@ -71,6 +71,7 @@ fieldset {
 }
 
 input#valider {
+    color: #444444;
     background-image:linear-gradient(lightcyan, #3ab4a6);
     margin-top: 1%;
     width: 50%;
