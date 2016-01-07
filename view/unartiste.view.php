@@ -24,6 +24,10 @@
             <?php echo $artiste->getPlace(); ?>
             </p>
             <p>
+                Email : 
+            <?php echo $artiste->getEmail(); ?>
+            </p>
+            <p>
                 Infos : 
             <?php echo $artiste->getInfos(); ?>
             </p>

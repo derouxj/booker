@@ -3,7 +3,8 @@ body {
     background-image: url(http://cvincent61.free.fr/fond/fond-site.jpg);
 }
 
-section {
+
+#main {
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -14,4 +15,25 @@ section {
     margin-top:5%;
     border-radius : 10px;
     padding:20%;
+}
+
+section > .name > a {
+    color: #ffffff;
+    background-color: #3ab4a6;
+    padding : 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom : 15%;
+    margin-left : auto;
+    margin-right : auto;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+section {
+    display: inline-block;
+    text-align : center;
+    margin-left: 2em;
+    margin-right: 2em;
 }

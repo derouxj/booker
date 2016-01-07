@@ -25,11 +25,19 @@
         line-height: 0;
         height: 0;
     }
+
+    #space {
+        margin-top: 80px;
+    }
+
     #cssmenu {
-        width: auto;
+        position : fixed; top : 0;
+        margin-bottom: 50px;
+        width: 100%;
         border-bottom: 3px solid #47c9af;
         font-family: Raleway, sans-serif;
         line-height: 1;
+        z-index: 3;
     }
     #cssmenu ul {
         background: #ffffff;

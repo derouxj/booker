@@ -50,3 +50,5 @@ section:not(#art) {
 .red_btn {
     background-color: #cc0000;
 }
+
+.hidden-radio{display:none;}

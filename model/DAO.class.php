@@ -1,16 +1,11 @@
 <?php
-
 require_once("../model/Users.php");
 require_once("../model/Event.php");
 require_once("../model/Message.php");
-
 $dao = new DAO();
-
 class DAO {
-
     private $db;
     private $database = 'sqlite:../data/booker.db';
-
     function __construct() {
         try {
             $this->db = new PDO('sqlite:../data/booker.db');
@@ -18,7 +13,6 @@ class DAO {
             die("erreur de connexion:" . $e->getMessage());
         }
     }
-
     function insertUser(Users $user) {
         try {
             $name = $this->db->quote($user->getUsername());
@@ -41,7 +35,6 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
-
     function insertEvent(Event $event, $arts) {
         try {
             $unB = $this->db->quote($event->getUsernameBooker());
@@ -68,7 +61,6 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
-
     function getAllFromUserName($username) {
         $username = $this->db->quote($username);
         $req = "SELECT * FROM users WHERE username=$username";
@@ -100,7 +92,6 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function getUsersFromUserType($type) {
         $type = $this->db->quote($type);
         $req = ("SELECT * FROM users WHERE usertype=$type");
@@ -116,7 +107,6 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function getUserFromUserNameAndPassWord($username, $password) {
         $req = $this->db->quote("SELECT * FROM users WHERE username='$username'AND password='$password'");
         try {
@@ -127,7 +117,6 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function getEventsOfBooker($booker) {
         $booker = $this->db->quote($booker);
         $req = ("SELECT * FROM event WHERE usernameBooker=$booker");
@@ -139,7 +128,6 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function rightPassword($un, $pw) {
         $pw = $this->db->quote($this->hashPassWord($pw));
         $un = $this->db->quote($un);
@@ -156,14 +144,12 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function hashPassWord($password) {
         $one = 'b00kerPr0jEcT';
         $two = 'SecuRed5DataBase';
         $npassword = sha1($one . $password . $two);
         return $npassword;
     }
-
     //update un user avec un objet user
     function updateUser($un, $fn, $ln, $em, $pl, $in, $pp) {
         $un = $this->db->quote($un);
@@ -197,7 +183,6 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
-
     function getCarnet($proprietaire) {
         $req = "SELECT * FROM contacts WHERE usernameProp='$proprietaire'"; //il ne faudrait pas tout prendre, a modifier
         //var_dump($req);
@@ -209,10 +194,8 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function insertCarnet($prop, $fn, $ln, $em, $pl, $jb, $tl, $ot) {
 //INSERT INTO contacts VALUES (3,"jejej","le prenom","le nom","l'email@test.fr","la-ville","le metiers","0"+"000642350091","il a plein d'info super utile qu'il ne faut pas oublier meme si s'est tres long voir trop long il faudra que ca soit beau et bien placé");
-
         $prop = $this->db->quote($prop);
         $fn = $this->db->quote($fn);
         $ln = $this->db->quote($ln);
@@ -231,10 +214,8 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
-
     function updateCarnet($fn, $ln, $em, $pl, $jb, $tl, $ot, $id) {
 //INSERT INTO contacts VALUES (3,"jejej","le prenom","le nom","l'email@test.fr","la-ville","le metiers","0"+"000642350091","il a plein d'info super utile qu'il ne faut pas oublier meme si s'est tres long voir trop long il faudra que ca soit beau et bien placé");
-
         $fn = $this->db->quote($fn);
         $ln = $this->db->quote($ln);
         $em = $this->db->quote($em);
@@ -252,7 +233,6 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
-
     function deleteCarnet($id) {
 //INSERT INTO contacts VALUES (3,"jejej","le prenom","le nom","l'email@test.fr","la-ville","le metiers","0"+"000642350091","il a plein d'info super utile qu'il ne faut pas oublier meme si s'est tres long voir trop long il faudra que ca soit beau et bien placé");
         $req = "DELETE FROM contacts WHERE idC=$id";
@@ -265,7 +245,6 @@ class DAO {
             die("PDO Error :" . $e->getMessage());
         }
     }
-
     function getContactCarnet($noC) {
         $req = "SELECT * FROM contacts WHERE idC='$noC'";
         //var_dump($req);
@@ -277,7 +256,6 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function getUsers() {
         $req = "SELECT username FROM users";
         //var_dump($req);
@@ -289,7 +267,6 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function getMessages($username) {
         $username = $this->db->quote($username);
         $req = "SELECT * FROM messages WHERE receiver=$username";
@@ -301,7 +278,6 @@ class DAO {
             die("erreur lors de la requete" . $e->getMessage());
         }
     }
-
     function sendMessage($sender, $receiver, $message) {
         $sender = $this->db->quote($sender);
         $receiver = $this->db->quote($receiver);

@@ -54,11 +54,13 @@
             <?php
             if($_POST['event']->isReady() == 1) { ?>
             <p>
-                <input class="green_btn" type="submit" name="ready"  value="Pret ? Oui">
+                <input type="radio" name="action" value="1" id="readiness" class="hidden-radio" />
+                <label for="readiness"><input class="green_btn" type="submit" value="Pret ? Oui"/></label>
             </p>
             <?php } else { ?>
             <p>
-                <input class="red_btn" type="submit" name="notready"  value="Pret ? Non">
+                <input type="radio" name="action" value="0" id="readiness" class="hidden-radio" />
+                <label for="readiness"><input class="red_btn" type="submit" value="Pret ? Non"/></label>
             </p>
             <?php } ?>
             </form>

@@ -40,19 +40,12 @@ if ($active == "carnet") {
         <script src="script.js"></script>
         <title>CSS MenuMaker</title>
     </head>
-    <body>
-
-        <div id='cssmenu'>
-            <ul>
-                <img src='http://www.dolfyn.net/dolfyn/icons/union-jack.png'height= 12 width = 17><li>
-                    <a href='../controller/accueil.php'>English
-                    </a>
-                </li><li>
-                    <a href='../controller/accueil.php'>Français
-
-                    </a>
-                </li><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-225px-Flag_of_France.svg.png'height= 12 width = 17>
-            </ul>
+    
+     <div id='space'>
+    
+        </div>
+    
+    <div id='cssmenu'>
             <ul>
                 <li class='<?php echo $accueil ?>'><a href="../index.php">Accueil</a></li>
                 <li class='<?php echo $artistes ?>'><a href="../controller/artistes.php">Artistes</a></li>
@@ -72,8 +65,6 @@ if ($active == "carnet") {
                         <a href='../controller/demande.php'>
                             Organiser un événement
                         </a>
-                    </li><li>
-
                     </li><li class='<?php echo $carnet ?>'>
                         <a href='../controller/carnet.php'>
                             Carnet d'adresse
@@ -92,5 +83,6 @@ if ($active == "carnet") {
 
         </div>
 
-    </body>
+    </div>
+
     <html>
