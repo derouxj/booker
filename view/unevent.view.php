@@ -17,10 +17,12 @@
         <section id="art">
             <p>
                 Organisateur : </br>
+                <a href="../controller/unartiste.php?art=<?php echo $_POST['org']->getUserName(); ?>">
             <?php
             echo $_POST['org']->getLastname() . ' ';
             echo $_POST['org']->getFirstName();
             echo '</br>( ' . $_POST['org']->getEmail() . ' )'; ?>
+                </a>
             </p>
             <p>
                 Nom de l'événement : 
@@ -34,6 +36,8 @@
                         <?php echo $value->getLastname() . ' ' . $value->getFirstname(); 
                         echo '</br>( ' . $value->getEmail() . ' )';?>
                     </a>
+                </br>
+                -----------
                 </br>
                 <?php } ?>
             </p>
@@ -50,20 +54,22 @@
             <?php echo $_POST['event']->getInfos(); ?>
             </p>
             
-            <form action="<?php echo $_SERVER['PHP_SELF'] . '?id=' . $_GET['id']; ?>" method="POST">
-            <?php
-            if($_POST['event']->isReady() == 1) { ?>
-            <p>
-                <input type="radio" name="action" value="1" id="readiness" class="hidden-radio" />
-                <label for="readiness"><input class="green_btn" type="submit" value="Pret ? Oui"/></label>
-            </p>
-            <?php } else { ?>
-            <p>
-                <input type="radio" name="action" value="0" id="readiness" class="hidden-radio" />
-                <label for="readiness"><input class="red_btn" type="submit" value="Pret ? Non"/></label>
-            </p>
+            <?php if(isset($_GET['modif']) && $_GET['modif']=='done') {
+                echo '<p>Le statut de cet evenement a été changé</p>';
+            } else { ?>
+                <form action="<?php echo $_SERVER['PHP_SELF'] . '?id=' . $_GET['id'] . '&modif=done'; ?>" method="POST">
+                <?php
+                if($_POST['event']->getReady() == 1) { ?>
+                    <p>
+                        <input class="green_btn" type="submit" value="Evenement pret" name="action"/>
+                    </p>
+                <?php } else { ?>
+                    <p>
+                        <input class="red_btn" type="submit" value="Evenement non pret" name="action"/>
+                    </p>
+                <?php } ?>
+                </form>
             <?php } ?>
-            </form>
             
         </section>
         <?php

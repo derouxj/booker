@@ -10,5 +10,6 @@ INSERT INTO users VALUES ("Organisateur2","1bc230f214bd2069b2918e06debab8cc346d6
 INSERT INTO event(id, usernameBooker, usernameOrg, eventName, eventPlace, eventDate, infos, ready) VALUES (1, "Booker1", "Organisateur1", "Nom", "Place", "2080-10-01", "Infos", 0);
 INSERT INTO event(id, usernameBooker, usernameOrg, eventName, eventPlace, eventDate, infos, ready) VALUES (2, "Booker2", "Organisateur2", "Nom2", "Place2", "2050-01-30", "Infos2", 0);
 
-INSERT INTO eventsOfUser VALUES ("Booker1", 1);
-INSERT INTO eventsOfUser VALUES ("Booker1", 2);
+INSERT INTO eventsOfUser VALUES ("Artiste1", 1);
+INSERT INTO eventsOfUser VALUES ("Artiste1", 2);
+INSERT INTO eventsOfUser VALUES ("Artiste2", 2);

@@ -10,12 +10,13 @@ if($event) {
     $_POST['event'] = $event[0];
     $_POST['org'] = $dao->getAllFromUserName($_POST['event']->getUsernameOrg())[0];
     $_POST['artistes'] = $dao->getUsersFromEventId($_GET['id']);
-    if (isset($_POST['submit'])) {
-        if ($_POST['action'] == 0) {
+    if (isset($_POST['action'])) {
+        if($event[0]->getReady() == 1) {
             $dao->updateEventState($_POST['event']->getId(), 0);
         }
-    } else {
-        $dao->updateEventState($_POST['event']->getId(), 1);
+        else {
+            $dao->updateEventState($_POST['event']->getId(), 1);
+        }
     }
 }
 

@@ -11,7 +11,10 @@
     <body>
         <?php $active = "";include('menu.view.php'); ?>
         <section id="main">
-            <center><p> Envoyez nous un pigeon voyageur avec votre requête :) (WIP)</p></center>
+            <center>
+                <p> Jérémy CARRE : jeremy.carre38@yahoo.fr </p>
+                <p> Mehdi BAIYANTE : baiyante.mehdi@hotmail.fr </p>
+            </center>
         </section>
 </body>
 </html>

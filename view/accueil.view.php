@@ -15,30 +15,31 @@
                 if (isset($data['contenu'])) {
                     foreach ($data['contenu'] as $value) {
                         ?>
-                        <section>
-                            <a href="../controller/infoevent.php?idevent=<?php echo $value->getId(); ?>">
+                    <a href="../controller/infoevent.php?idevent=<?php echo $value->getId(); ?>">
+                        <section id="event">
+
                             <p class='name'>
                                 <?php echo $value->getEventName(); ?>
                             </p>
-                            </a>
                             <p>
                                 Où : <?php echo $value->getEventPlace(); ?>
                             </p>
                             <p>
                                 Quand : <?php echo $value->getEventDate(); ?>
                             </p>
-                            <p>
-                                Infos : <?php echo $value->getInfos(); ?>
-                            </p>
+
                         </section>
-                        <?php
-                    }
+                    </a>
+                    <?php
+                }
                 } ?>
-            <div id="contact">
+            
+            <div id="end">
                 <a href='../controller/contact.php'>
-                    Nous contacter
+                    Contacter un administrateur
                 </a>
             </div>
+                
         </section>
     </body>
 </html>

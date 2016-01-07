@@ -50,7 +50,9 @@ class Event {
         if($inf){
             $this->infos = $inf;
         }
-        $this->ready=0;
+        if($inf){
+            $this->ready = $r;
+        }
     }
     
     function getId(){
@@ -74,7 +76,7 @@ class Event {
     function getInfos(){
         return $this->infos;
     }
-    function isReady(){
+    function getReady(){
         return $this->ready;
     }
     

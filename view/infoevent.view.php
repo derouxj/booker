@@ -16,9 +16,11 @@
         <section id="art">
             <p>
                 Organisateur : </br>
+                <a href="../controller/unartiste.php?art=<?php echo $_POST['org']->getUserName(); ?>">
             <?php
             echo $_POST['org']->getLastname() . ' ';
             echo $_POST['org']->getFirstName(); ?>
+                </a>
             </p>
             <p>
                 Nom de l'événement : 
@@ -31,6 +33,8 @@
                     <a href="../controller/unartiste.php?art=<?php echo $value->getUserName(); ?>">
                         <?php echo $value->getLastname() . ' ' . $value->getFirstname(); ?>
                     </a>
+                </br>
+                -----------
                 </br>
                 <?php } ?>
             </p>

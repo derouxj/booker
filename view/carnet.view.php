@@ -13,34 +13,38 @@
         <section id="main">
             <center><p> ICI VOTRE CARNET </p>
                 <table>
-                    <tr>
-                        <td><p>Nom</p></td>
-                        <td><p>Prenom</p></td>
-                        <td><p>E-mail</p></td>
-                        <td><p>Ville</p></td>
-                        <td><p>Métier</p></td>
-                        <td><p>Téléphone</p></td>
-                        <td><p>Détails</p></td>
-                        <td><p>Modification</p></td>
+                    <tr id="top">
+                        <td>Nom</td>
+                        <td>Prenom</td>
+                        <td>E-mail</td>
+                        <td>Ville</td>
+                        <td>Métier</td>
+                        <td>Téléphone</td>
+                        <td>Détails</td>
+                        <td>Modification</td>
                     </tr>
                     <?php
                         if (isset($mesContacts)) {
                             foreach($mesContacts as $monContact) {
-                                echo '<tr><td><p>'.$monContact[3].'</p></td>';
-                                echo '<td><p>'.$monContact[2].'</p></td>';
-                                echo '<td><p>'.$monContact[4].'</p></td>';
-                                echo '<td><p>'.$monContact[5].'</p></td>';
-                                echo '<td><p>'.$monContact[6].'</p></td>';
-                                echo '<td><p>'.$monContact[7].'</p></td>';
-                                echo '<td><p>'.$monContact[8].'</p></td>';
+                                echo '<tr><td>'.$monContact[3].'</td>';
+                                echo '<td>'.$monContact[2].'</td>';
+                                echo '<td>'.$monContact[4].'</td>';
+                                echo '<td>'.$monContact[5].'</td>';
+                                echo '<td>'.$monContact[6].'</td>';
+                                echo '<td>'.$monContact[7].'</td>';
+                                echo '<td>'.$monContact[8].'</td>';
                                 echo '<td><a href=\''.'../controller/nouveauContactCarnet.php?idC='.$monContact[0].'\'><img src=\'../view/img/logo_modif.png\' height="30" width="30"/></a> 
                                 <a href=\''.'../controller/carnet.php?idC='.$monContact[0].'\'><img src=\'../view/img/logo_suppr.png\' height="30" width="30"/></a> </td></tr>';
                             }
                         }
                     ?>
                 </table>
-                <a href="../controller/nouveauContactCarnet.php">Ajouter un contact</a>
-                <a href="../controller/importerContact.php">Importer un contact</a>
+                <div id="end">
+                    <a href="../controller/nouveauContactCarnet.php">Ajouter un contact</a>
+                </div>
+                <div id="end">
+                    <a href="../controller/importerContact.php">Importer un contact</a>
+                </div>
                 
             </center>
         </section>

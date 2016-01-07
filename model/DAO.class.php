@@ -119,7 +119,7 @@ class DAO {
     }
     function getEventsOfBooker($booker) {
         $booker = $this->db->quote($booker);
-        $req = ("SELECT * FROM event WHERE usernameBooker=$booker");
+        $req = "SELECT * FROM event WHERE usernameBooker=$booker and eventDate>date('now')";
         try {
             $res1 = $this->db->query($req);
             $result = $res1->fetchAll(PDO::FETCH_CLASS, 'event');
@@ -326,7 +326,7 @@ class DAO {
     
     //retourne tous les events prets et a venir
     function getEventsReady() {
-        $req = "SELECT * from event WHERE eventDate<date('now') AND ready=1";
+        $req = "SELECT * from event WHERE eventDate>date('now') AND ready=1";
         try {
             $res1 = $this->db->query($req);
             return $res1->fetchAll(PDO::FETCH_CLASS, 'event');

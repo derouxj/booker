@@ -30,6 +30,7 @@
                         echo '<a href="../controller/unevent.php?id=' . $e->getId() . '">';
                         echo $e->getEventName().'<br>'; 
                         echo '</a>';
+                        echo '</br>';
                     }?>
                 </p>
             </div>

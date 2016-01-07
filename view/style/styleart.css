@@ -17,6 +17,11 @@ section:not(#art) > .name > a {
     border-radius: 8px;
 }
 
+section:not(#art) > .name > a:hover {
+    background-image:linear-gradient(#3ab4c6, #3ab4a6);
+    color:white;
+}
+
 section:not(#art) {
     display: inline-block;
     text-align : center;
@@ -43,12 +48,36 @@ section:not(#art) {
     font-weight: bold;
 }
 
+form input {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top : 0.2em;
+    padding-bottom : 0.2em;
+    padding-left : 0.8em;
+    padding-right : 0.8em;
+    border-radius: 8px;
+    width: 15em;
+    font-weight: bold;
+}
+
 .green_btn {
     background-color: #00cc33;
 }
 
+.green_btn:hover {
+    background-color: darkgreen;
+    color : white;
+}
+
 .red_btn {
     background-color: #cc0000;
+    color : white;
 }
+
+.red_btn:hover {
+    background-color: lightcoral;
+    color : black;
+}
+
 
 .hidden-radio{display:none;}

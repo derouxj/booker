@@ -9,7 +9,6 @@
         </title>
     </head>
     <body>
-        <?php var_dump($users);?>
         <?php $active="carnet";include('menu.view.php'); ?>
         <section id="main">
             <center><p> IMPORTER UN CONTACT </p>

@@ -17,23 +17,63 @@ body {
     padding:20%;
 }
 
-section > .name > a {
+#event {
+    padding:3%;
+    background-image:linear-gradient(white, lightblue);
+    display: inline-block;
+    text-align : center;
+    margin-left: 2em;
+    margin-right: 2em;
+    border: solid 1px cadetblue;
+}
+
+#event .name {
+    font-weight: bold;
+}
+
+#event:hover {
+    background-image:linear-gradient(lightblue, white);
+}
+
+#end {
+    margin-top: 10%;
+}
+
+#end a {
     color: #ffffff;
     background-color: #3ab4a6;
-    padding : 5%;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-bottom : 15%;
-    margin-left : auto;
-    margin-right : auto;
+    padding : 2%;
+    padding-left: 7%;
+    padding-right: 7%;
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
 }
 
-section {
-    display: inline-block;
-    text-align : center;
-    margin-left: 2em;
-    margin-right: 2em;
+#end a:hover {
+    background-image:linear-gradient(#3ab4c6, #3ab4a6);
+    color:white;
+}
+
+table {
+    border-collapse: collapse;
+    border:none;
+}
+
+table td {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    margin : 2px;
+}
+
+table td:first-child {
+    border-left: none;
+}
+
+table td:last-child {
+    border-right: none;
+}
+
+#top {
+    font-weight: bold;
 }

@@ -33,7 +33,7 @@
 
             </fieldset>
             <input id="valider" type="submit" name="valider" value="Sauvegarder modifications">
-            <?php if (isset($_POST['valider']) && $correct == 1) { 
+            <?php if (isset($_GET['modif']) && $_GET['modif'] == "true") { 
                 echo '<center><p>Modifications effectuées</p></center>';
                 }
             ?>
