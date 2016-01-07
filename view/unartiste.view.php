@@ -20,10 +20,6 @@
             <?php echo $artiste->getFirstName(); ?>
             </p>
             <p>
-                Email : 
-            <?php echo $artiste->getEmail(); ?>
-            </p>
-            <p>
                 Place : 
             <?php echo $artiste->getPlace(); ?>
             </p>

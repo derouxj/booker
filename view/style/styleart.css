@@ -42,3 +42,11 @@ section:not(#art) {
     width: 15em;
     font-weight: bold;
 }
+
+.green_btn {
+    background-color: #00cc33;
+}
+
+.red_btn {
+    background-color: #cc0000;
+}

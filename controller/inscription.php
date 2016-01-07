@@ -3,7 +3,6 @@
 include_once("../model/Users.php");
 include_once("../model/DAO.class.php");
 
-$dao = new DAO();
 
 if (isset($_POST['valider'])) {
     $correct = 1;

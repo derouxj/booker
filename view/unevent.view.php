@@ -18,8 +18,9 @@
             <p>
                 Organisateur : </br>
             <?php
-            echo $_POST['lel']->getLastname() . ' ';
-            echo $_POST['lel']->getFirstName(); ?>
+            echo $_POST['org']->getLastname() . ' ';
+            echo $_POST['org']->getFirstName();
+            echo '</br>( ' . $_POST['org']->getEmail() . ' )'; ?>
             </p>
             <p>
                 Nom de l'événement : 
@@ -29,7 +30,10 @@
                 Artistes participant :
                 </br>
                 <?php foreach ($_POST['artistes'] as $value) { ?>
-                    <?php echo $value->getLastname() . ' ' . $value->getFirstname(); ?>
+                    <a href="../controller/unartiste.php?art=<?php echo $value->getUserName(); ?>">
+                        <?php echo $value->getLastname() . ' ' . $value->getFirstname(); 
+                        echo '</br>( ' . $value->getEmail() . ' )';?>
+                    </a>
                 </br>
                 <?php } ?>
             </p>
@@ -45,15 +49,20 @@
                 Infos sur événement : 
             <?php echo $_POST['event']->getInfos(); ?>
             </p>
-            <?php if($_POST['event']->isReady()) { ?>
+            
+            <form action="<?php echo $_SERVER['PHP_SELF'] . '?id=' . $_GET['id']; ?>" method="POST">
+            <?php
+            if($_POST['event']->isReady() == 1) { ?>
             <p>
-                Prêt ? Oui
+                <input class="green_btn" type="submit" name="ready"  value="Pret ? Oui">
             </p>
             <?php } else { ?>
             <p>
-                Prêt ? Non
+                <input class="red_btn" type="submit" name="notready"  value="Pret ? Non">
             </p>
             <?php } ?>
+            </form>
+            
         </section>
         <?php
         } else {

@@ -23,7 +23,6 @@ if (isset($_POST['valider'])) {
     }
     if($correct) {
         $dao->updateUser($_COOKIE['username'],$_POST['firstname'],$_POST['lastname'],$_POST['email'],$_POST['place'],$_POST['infos'],$_POST['pic']);
-        $dao->updateinfoartiste($_COOKIE['username'] ,$_POST['infos2'], $_POST['video']);
         header('Location: ../controller/changeacc.php?modif=true');
     }
     if ($s != "") {$_POST['fieldnotset'] = $s;}

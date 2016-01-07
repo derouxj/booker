@@ -184,22 +184,6 @@ class DAO {
         }
     }
     
-        function updateinfoartiste($un,$an,$vid) {
-        $un = $this->db->quote($un);
-        $an = $this->db->quote($an);
-        $vid = $this->db->quote($vid);
-        $req = "UPDATE infoartistes SET anecdote=$an, video=$vid WHERE username=$un";
-        try {
-            $r = $this->db->exec($req);
-            if ($r == 0) {
-                die("updateUser error: no user updated\n");
-            }
-        } catch (PDOException $e) {
-            die("PDO Error :" . $e->getMessage());
-        }
-    }
-    
-    
     function updatePassword($un,$pw) {
         $pw = $this->db->quote($this->hashPassWord($pw));
         $un = $this->db->quote($un);
@@ -361,6 +345,32 @@ class DAO {
             }
         } catch (PDOException $e) {
             die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
+    
+    //retourne tous les events prets et a venir
+    function getEventsReady() {
+        $req = "SELECT * from event WHERE eventDate<date('now') AND ready=1";
+        try {
+            $res1 = $this->db->query($req);
+            return $res1->fetchAll(PDO::FETCH_CLASS, 'event');
+        } catch (PDOException $e) {
+            die("erreur lors de la requete" . $e->getMessage());
+        }
+    }
+    
+    //udpate le statut d'un event a partir de son id
+    function updateEventState($id,$state){
+        $id = $this->db->quote($id);
+        $state = $this->db->quote($state);
+        $req = "UPDATE event SET ready=$state WHERE id=$id";
+        try {
+            $r = $this->db->exec($req);
+            if ($r == 0) {
+                die("updateEventState error: no event updated\n");
+            }
+        } catch (PDOException $e) {
+            die("PDO Error :" . $e->getMessage());
         }
     }
 

@@ -11,9 +11,29 @@
     <body>
         <?php $active = "accueil"; include("menu.view.php"); ?>
         <section id="main">
-            <?php if (isset($_COOKIE['username'])) { ?>
-            <?php } ?>
-            <div id="desc">Description de l'activité du site (WIP)</div>   
+            <?php
+                if (isset($data['contenu'])) {
+                    foreach ($data['contenu'] as $value) {
+                        ?>
+                        <section>
+                            <a href="../controller/infoevent.php?idevent=<?php echo $value->getId(); ?>">
+                            <p class='name'>
+                                <?php echo $value->getEventName(); ?>
+                            </p>
+                            </a>
+                            <p>
+                                Où : <?php echo $value->getEventPlace(); ?>
+                            </p>
+                            <p>
+                                Quand : <?php echo $value->getEventDate(); ?>
+                            </p>
+                            <p>
+                                Infos : <?php echo $value->getInfos(); ?>
+                            </p>
+                        </section>
+                        <?php
+                    }
+                } ?>
             <div id="contact">
                 <a href='../controller/contact.php'>
                     Nous contacter

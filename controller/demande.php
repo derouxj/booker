@@ -1,7 +1,7 @@
 <?php
 include_once("../model/DAO.class.php");
 include_once("../model/Event.php");
-$dao = new DAO();
+
 $bookers = $dao->getUsersFromUserType('b');
 $artists = $dao->getUsersFromUserType('a');
 if(isset($_POST['valider'])){
